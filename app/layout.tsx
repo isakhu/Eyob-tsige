@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Pacifico } from "next/font/google";
 import "./globals.css";
+
+const pacifico = Pacifico({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-pacifico",
+});
 
 export const metadata: Metadata = {
   title: "Eyob Tsige Terefe",
@@ -12,7 +19,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${pacifico.variable} antialiased`}>{children}</body>
     </html>
   );
 }

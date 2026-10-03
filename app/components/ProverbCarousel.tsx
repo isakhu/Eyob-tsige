@@ -5,8 +5,6 @@ import {
   useRef,
   useState,
   type KeyboardEvent,
-  type PointerEvent,
-} from "react";
 import { DEFAULT_ATTRIBUTION, type Proverb } from "../data/proverbs";
 
 /** Fraction of the card width a drag must travel to change slides. */
@@ -26,13 +24,12 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
   const [index, setIndex] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [lang, setLang] = useState<"am" | "en">("am");
 
   const viewportRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<DragState | null>(null);
 
   const count = items.length;
-  const isFirst = index === 0;
-  const isLast = index === count - 1;
 
   const goTo = useCallback(
     (next: number) => setIndex(((next % count) + count) % count),
@@ -40,6 +37,14 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
   );
   const prev = useCallback(() => goTo(index - 1), [goTo, index]);
   const next = useCallback(() => goTo(index + 1), [goTo, index]);
+
+  // Calculates shortest distance for infinite looping effect
+  const getDist = useCallback((i: number) => {
+    let d = i - index;
+    if (d > count / 2) d -= count;
+    if (d < -count / 2) d += count;
+    return d;
+  }, [index, count]);
 
   /* ---------- Swipe / drag (mouse, touch, pen) ---------- */
 
@@ -58,9 +63,8 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
   const handlePointerMove = (e: PointerEvent<HTMLDivElement>) => {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== e.pointerId) return;
-    let dx = e.clientX - drag.startX;
-    if ((isFirst && dx > 0) || (isLast && dx < 0)) dx *= EDGE_RESISTANCE;
-    setDragOffset(dx);
+    const dx = e.clientX - drag.startX;
+    setDragOffset(dx); // Infinite loop means no edge resistance needed
   };
 
   const endDrag = (e: PointerEvent<HTMLDivElement>, cancelled = false) => {
@@ -76,8 +80,8 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
         Math.abs(dx) > width * DISTANCE_THRESHOLD ||
         (Math.abs(dx) > 30 && velocity > VELOCITY_THRESHOLD);
 
-      if (passed && dx < 0 && !isLast) setIndex(index + 1);
-      if (passed && dx > 0 && !isFirst) setIndex(index - 1);
+      if (passed && dx < 0) goTo(index + 1);
+      if (passed && dx > 0) goTo(index - 1);
     }
 
     setDragOffset(0);
@@ -109,6 +113,27 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
       aria-label="Proverbs and wisdom"
       className="mt-10"
     >
+      <div className="mb-6 flex justify-end px-4">
+        <div className="flex rounded-full bg-white/5 p-1 border border-[#E00000]/20 backdrop-blur-sm">
+          <button
+            onClick={() => setLang("am")}
+            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
+              lang === "am" ? "bg-[#E00000] text-[#000000] shadow-md" : "text-[#E00000]/60 hover:text-[#E00000]"
+            }`}
+          >
+            አማርኛ
+          </button>
+          <button
+            onClick={() => setLang("en")}
+            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
+              lang === "en" ? "bg-[#E00000] text-[#000000] shadow-md" : "text-[#E00000]/60 hover:text-[#E00000]"
+            }`}
+          >
+            English
+          </button>
+        </div>
+      </div>
+
       {/* Viewport: focusable for arrow-key navigation */}
       <div
         ref={viewportRef}
@@ -119,34 +144,46 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
         onPointerUp={(e) => endDrag(e)}
         onPointerCancel={(e) => endDrag(e, true)}
         onDragStart={(e) => e.preventDefault()}
-        className={`touch-pan-y select-none overflow-hidden rounded-3xl outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-4 ${
+        className={`relative touch-pan-y select-none overflow-hidden rounded-3xl outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-4 h-[550px] md:h-[650px] w-full flex items-center justify-center [perspective:1500px] ${
           count > 1 ? (isDragging ? "cursor-grabbing" : "cursor-grab") : ""
         }`}
       >
-        <div
-          aria-live={isDragging ? "off" : "polite"}
-          className={`flex ${
-            isDragging
-              ? "transition-none"
-              : "transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
-          }`}
-          style={{
-            transform: `translate3d(calc(${-index * 100}% + ${dragOffset}px), 0, 0)`,
-          }}
-        >
-          {items.map((item, i) => (
+        {items.map((item, i) => {
+          const dist = getDist(i);
+          const absDist = Math.abs(dist);
+          const isActive = dist === 0;
+
+          const dragX = isDragging ? dragOffset : 0;
+          const translateX = dist * 65; 
+          const translateZ = -absDist * 220; 
+          const rotateY = dist * -25; 
+          const opacity = Math.max(1 - (absDist * 0.4), 0);
+          const zIndex = 50 - absDist;
+
+          const transitionClass = isDragging 
+            ? "transition-none" 
+            : "transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]";
+
+          return (
             <div
               key={i}
               role="group"
               aria-roledescription="slide"
               aria-label={`${i + 1} of ${count}`}
-              aria-hidden={i !== index}
-              className="w-full shrink-0"
+              aria-hidden={!isActive}
+              className={`absolute w-[85%] md:w-[60%] max-w-2xl shrink-0 [transform-style:preserve-3d] ${transitionClass}`}
+              style={{
+                transform: `translateX(calc(${translateX}% + ${dragX}px)) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
+                opacity,
+                zIndex,
+                visibility: absDist > 3 ? 'hidden' : 'visible',
+                pointerEvents: isActive ? 'auto' : 'none',
+              }}
             >
-              <ProverbCard item={item} active={i === index} />
+              <ProverbCard item={item} active={isActive} lang={lang} />
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
       {/* Controls */}
@@ -165,8 +202,8 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
                 <span
                   className={`block h-2 rounded-full transition-all duration-300 ${
                     i === index
-                      ? "w-8 bg-black"
-                      : "w-2 bg-black/20 group-hover:bg-black/40"
+                      ? "w-8 bg-[#E00000]"
+                      : "w-2 bg-[#F5E6CC]/20 group-hover:bg-[#F5E6CC]/50"
                   }`}
                 />
               </button>
@@ -174,7 +211,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="hidden text-sm tabular-nums text-black/45 sm:block">
+            <p className="hidden text-sm tabular-nums text-[#F5E6CC]/60 sm:block">
               {String(index + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
             </p>
             <div className="flex gap-2">
@@ -188,87 +225,95 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
   );
 }
 
-function ProverbCard({ item, active }: { item: Proverb; active: boolean }) {
-  const [lang, setLang] = useState<"am" | "en">("am");
+/** Body text longer than this (in characters) is collapsed behind "Read more". */
+const COLLAPSE_AFTER = 450;
+
+function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; lang: "am" | "en" }) {
+  const [expanded, setExpanded] = useState(false);
   const attribution = item.attribution ?? DEFAULT_ATTRIBUTION;
+
+  // Use English when selected and available; otherwise fall back to Amharic.
+  const showEnglish = lang === "en" && Boolean(item.english);
+  const textLang = showEnglish ? "en" : "am";
+  const text = showEnglish ? item.english : item.amharic;
+  const isLong = (text?.length ?? 0) > COLLAPSE_AFTER;
 
   return (
     <article
-      className={`relative overflow-hidden flex h-full flex-col rounded-2xl bg-[#0a0a0a] p-8 md:p-14 transition-opacity duration-500 shadow-2xl ${
-        active ? "opacity-100" : "opacity-40"
+      className={`relative overflow-hidden flex flex-col rounded-2xl p-8 md:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/5 transition-colors duration-700 ${
+        active ? "bg-[#181818]" : "bg-[#111111]"
       }`}
     >
       {/* Inner Gold Border */}
-      <div className="absolute inset-[10px] border border-[#d4af37]/30 pointer-events-none rounded-[4px]" />
+      <div className="absolute inset-[10px] border border-[#E00000]/30 pointer-events-none rounded-[4px]" />
       
       {/* Decorative Top-Left */}
       <div className="absolute top-0 left-0 w-32 h-32 pointer-events-none overflow-hidden">
-        <div className="absolute top-8 -left-8 w-40 h-[4px] bg-gradient-to-r from-[#e67e22] to-[#f1c40f] -rotate-45 shadow-[0_0_10px_rgba(241,196,15,0.5)]" />
-        <div className="absolute top-16 -left-6 w-40 h-[2px] bg-[#d4af37]/60 -rotate-45" />
+        <div className="absolute top-8 -left-8 w-40 h-[4px] bg-[#E00000] -rotate-45 shadow-[0_0_10px_rgba(252,163,17,0.5)]" />
+        <div className="absolute top-16 -left-6 w-40 h-[2px] bg-[#E00000]/60 -rotate-45" />
       </div>
 
       {/* Decorative Bottom-Right */}
       <div className="absolute bottom-0 right-0 w-32 h-32 pointer-events-none overflow-hidden">
-        <div className="absolute bottom-8 -right-8 w-40 h-[4px] bg-gradient-to-l from-[#e67e22] to-[#f1c40f] -rotate-45 shadow-[0_0_10px_rgba(241,196,15,0.5)]" />
-        <div className="absolute bottom-16 -right-6 w-40 h-[2px] bg-[#d4af37]/60 -rotate-45" />
-      </div>
-
-      {/* Language Toggle */}
-      <div 
-        className="relative z-10 flex justify-end mb-8" 
-        onPointerDown={(e) => e.stopPropagation()} // Prevent swiping when toggling
-      >
-        <div className="flex rounded-full bg-white/5 p-1 border border-[#d4af37]/20 backdrop-blur-sm">
-          <button
-            onClick={() => setLang("am")}
-            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
-              lang === "am" ? "bg-[#d4af37] text-black shadow-md" : "text-[#d4af37]/60 hover:text-[#d4af37]"
-            }`}
-          >
-            አማርኛ
-          </button>
-          <button
-            onClick={() => setLang("en")}
-            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
-              lang === "en" ? "bg-[#d4af37] text-black shadow-md" : "text-[#d4af37]/60 hover:text-[#d4af37]"
-            }`}
-          >
-            English
-          </button>
-        </div>
+        <div className="absolute bottom-8 -right-8 w-40 h-[4px] bg-[#E00000] -rotate-45 shadow-[0_0_10px_rgba(252,163,17,0.5)]" />
+        <div className="absolute bottom-16 -right-6 w-40 h-[2px] bg-[#E00000]/60 -rotate-45" />
       </div>
 
       <div className="relative z-10 flex flex-col flex-grow">
         <div className="flex items-start justify-between gap-4">
-          <span className="text-[#d4af37] text-sm font-bold uppercase tracking-widest">
-            {lang === "am" ? "ምሳሌ" : "PROVERB"}
+          <span className="text-[#E00000] text-sm font-bold uppercase tracking-widest">
+            {showEnglish ? "Proverb" : "ምሳሌ"}
           </span>
           {item.placeholder && (
-            <span className="rounded-full border border-[#e67e22]/50 bg-[#e67e22]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#f1c40f]">
+            <span className="rounded-full border border-[#E00000]/50 bg-[#E00000]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#E00000]">
               Placeholder
             </span>
           )}
         </div>
 
-        <blockquote
-          lang={lang}
-          className="mt-6 max-w-4xl text-2xl md:text-4xl font-medium text-white/90 leading-snug md:leading-relaxed"
-        >
-          {lang === "am" ? item.amharic : item.english}
-        </blockquote>
+        <div className="relative mt-6">
+          <blockquote
+            key={textLang}
+            lang={textLang}
+            className={`max-w-4xl whitespace-pre-line text-2xl md:text-3xl font-medium text-white/90 leading-snug md:leading-relaxed animate-[heroFadeUp_0.5s_ease-out_both] ${
+              isLong && !expanded ? "line-clamp-[8]" : ""
+            }`}
+          >
+            {text}
+          </blockquote>
+          {isLong && !expanded && (
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(0deg,#181818_10%,transparent)]" />
+          )}
+        </div>
 
-        {(lang === "am" ? item.meaningAmharic : item.meaningEnglish) && (
-          <div className="mt-8 pt-6 border-t border-[#d4af37]/20">
-            <span className="text-[#d4af37]/70 text-xs font-bold uppercase tracking-widest block mb-3">
-              {lang === "am" ? "ትርጉሙ" : "Meaning"}
-            </span>
-            <p className="max-w-3xl text-lg text-white/70 leading-relaxed font-light">
-              {lang === "am" ? item.meaningAmharic : item.meaningEnglish}
-            </p>
-          </div>
+        {isLong && (
+          <button
+            type="button"
+            aria-expanded={expanded}
+            tabIndex={active ? 0 : -1}
+            onPointerDown={(e) => e.stopPropagation()} // don't start a swipe
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-6 inline-flex self-start items-center gap-2 rounded-full border border-[#E00000]/50 px-5 py-2 text-sm font-semibold text-[#F5E6CC] transition-colors hover:bg-[#E00000] hover:text-white"
+          >
+            {expanded
+              ? showEnglish ? "Show less" : "በአጭሩ አሳይ"
+              : showEnglish ? "Read more" : "ሙሉውን ያንብቡ"}
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className={`h-4 w-4 transition-transform ${expanded ? "rotate-180" : ""}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
         )}
 
-        <p className="mt-auto pt-10 text-sm font-serif italic text-[#d4af37]/80 text-right">
+        <p className="mt-10 pt-6 border-t border-[#E00000]/20 text-sm font-serif italic text-[#E00000]/80 text-right">
           &mdash; {attribution}
         </p>
       </div>
@@ -288,7 +333,7 @@ function ArrowButton({
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous proverb" : "Next proverb"}
-      className="grid h-12 w-12 place-items-center rounded-full border border-black/15 bg-white transition hover:border-black hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:scale-95"
+      className="grid h-12 w-12 place-items-center rounded-full border border-[#F5E6CC]/20 bg-[#181818] text-[#E00000] transition-all hover:border-[#E00000] hover:bg-[#E00000] hover:text-[#000000] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E00000] active:scale-95 shadow-lg"
     >
       <svg
         viewBox="0 0 24 24"
