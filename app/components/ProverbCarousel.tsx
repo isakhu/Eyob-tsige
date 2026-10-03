@@ -5,6 +5,7 @@ import {
   useRef,
   useState,
   type KeyboardEvent,
+} from "react";
 import { DEFAULT_ATTRIBUTION, type Proverb } from "../data/proverbs";
 
 /** Fraction of the card width a drag must travel to change slides. */
@@ -114,19 +115,19 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
       className="mt-10"
     >
       <div className="mb-6 flex justify-end px-4">
-        <div className="flex rounded-full bg-white/5 p-1 border border-[#E00000]/20 backdrop-blur-sm">
+        <div className="flex rounded-full bg-white p-1 border border-black/5 shadow-sm">
           <button
             onClick={() => setLang("am")}
-            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
-              lang === "am" ? "bg-[#E00000] text-[#000000] shadow-md" : "text-[#E00000]/60 hover:text-[#E00000]"
+            className={`rounded-full px-5 py-1.5 text-sm font-bold transition-colors ${
+              lang === "am" ? "bg-[#8B0000] text-[#FDFBF7] shadow-md" : "text-[#1A1A1A]/60 hover:text-[#8B0000]"
             }`}
           >
             አማርኛ
           </button>
           <button
             onClick={() => setLang("en")}
-            className={`rounded-full px-5 py-1.5 text-sm font-medium transition-colors ${
-              lang === "en" ? "bg-[#E00000] text-[#000000] shadow-md" : "text-[#E00000]/60 hover:text-[#E00000]"
+            className={`rounded-full px-5 py-1.5 text-sm font-bold transition-colors ${
+              lang === "en" ? "bg-[#8B0000] text-[#FDFBF7] shadow-md" : "text-[#1A1A1A]/60 hover:text-[#8B0000]"
             }`}
           >
             English
@@ -202,8 +203,8 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
                 <span
                   className={`block h-2 rounded-full transition-all duration-300 ${
                     i === index
-                      ? "w-8 bg-[#E00000]"
-                      : "w-2 bg-[#F5E6CC]/20 group-hover:bg-[#F5E6CC]/50"
+                      ? "w-8 bg-[#8B0000]"
+                      : "w-2 bg-[#1A1A1A]/20 group-hover:bg-[#1A1A1A]/50"
                   }`}
                 />
               </button>
@@ -211,7 +212,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="hidden text-sm tabular-nums text-[#F5E6CC]/60 sm:block">
+            <p className="hidden text-sm tabular-nums text-[#1A1A1A]/60 sm:block font-medium">
               {String(index + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
             </p>
             <div className="flex gap-2">
@@ -240,32 +241,32 @@ function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; l
 
   return (
     <article
-      className={`relative overflow-hidden flex flex-col rounded-2xl p-8 md:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/5 transition-colors duration-700 ${
-        active ? "bg-[#181818]" : "bg-[#111111]"
+      className={`relative overflow-hidden flex flex-col rounded-2xl p-8 md:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-black/5 transition-colors duration-700 ${
+        active ? "bg-white" : "bg-[#FDFBF7]"
       }`}
     >
       {/* Inner Gold Border */}
-      <div className="absolute inset-[10px] border border-[#E00000]/30 pointer-events-none rounded-[4px]" />
+      <div className="absolute inset-[10px] border border-[#D4A63A]/40 pointer-events-none rounded-[4px]" />
       
       {/* Decorative Top-Left */}
       <div className="absolute top-0 left-0 w-32 h-32 pointer-events-none overflow-hidden">
-        <div className="absolute top-8 -left-8 w-40 h-[4px] bg-[#E00000] -rotate-45 shadow-[0_0_10px_rgba(252,163,17,0.5)]" />
-        <div className="absolute top-16 -left-6 w-40 h-[2px] bg-[#E00000]/60 -rotate-45" />
+        <div className="absolute top-8 -left-8 w-40 h-[4px] bg-[#8B0000] -rotate-45 shadow-[0_0_10px_rgba(139,0,0,0.2)]" />
+        <div className="absolute top-16 -left-6 w-40 h-[2px] bg-[#D4A63A] -rotate-45" />
       </div>
 
       {/* Decorative Bottom-Right */}
       <div className="absolute bottom-0 right-0 w-32 h-32 pointer-events-none overflow-hidden">
-        <div className="absolute bottom-8 -right-8 w-40 h-[4px] bg-[#E00000] -rotate-45 shadow-[0_0_10px_rgba(252,163,17,0.5)]" />
-        <div className="absolute bottom-16 -right-6 w-40 h-[2px] bg-[#E00000]/60 -rotate-45" />
+        <div className="absolute bottom-8 -right-8 w-40 h-[4px] bg-[#8B0000] -rotate-45 shadow-[0_0_10px_rgba(139,0,0,0.2)]" />
+        <div className="absolute bottom-16 -right-6 w-40 h-[2px] bg-[#D4A63A] -rotate-45" />
       </div>
 
       <div className="relative z-10 flex flex-col flex-grow">
         <div className="flex items-start justify-between gap-4">
-          <span className="text-[#E00000] text-sm font-bold uppercase tracking-widest">
+          <span className="text-[#8B0000] text-sm font-bold uppercase tracking-widest">
             {showEnglish ? "Proverb" : "ምሳሌ"}
           </span>
           {item.placeholder && (
-            <span className="rounded-full border border-[#E00000]/50 bg-[#E00000]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#E00000]">
+            <span className="rounded-full border border-[#8B0000]/50 bg-[#8B0000]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#8B0000]">
               Placeholder
             </span>
           )}
@@ -275,14 +276,14 @@ function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; l
           <blockquote
             key={textLang}
             lang={textLang}
-            className={`max-w-4xl whitespace-pre-line text-2xl md:text-3xl font-medium text-white/90 leading-snug md:leading-relaxed animate-[heroFadeUp_0.5s_ease-out_both] ${
-              isLong && !expanded ? "line-clamp-[8]" : ""
-            }`}
+            className={`max-w-4xl whitespace-pre-line text-xl md:text-2xl lg:text-3xl font-medium text-[#1A1A1A]/90 leading-snug md:leading-relaxed animate-[heroFadeUp_0.5s_ease-out_both] ${
+              textLang === "am" ? "font-['var(--font-noto-ethiopic)',_serif]" : "font-['Georgia',_'Times_New_Roman',_serif]"
+            } ${isLong && !expanded ? "line-clamp-[8]" : ""}`}
           >
             {text}
           </blockquote>
           {isLong && !expanded && (
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(0deg,#181818_10%,transparent)]" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(0deg,white_10%,transparent)]" />
           )}
         </div>
 
@@ -293,7 +294,7 @@ function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; l
             tabIndex={active ? 0 : -1}
             onPointerDown={(e) => e.stopPropagation()} // don't start a swipe
             onClick={() => setExpanded((v) => !v)}
-            className="mt-6 inline-flex self-start items-center gap-2 rounded-full border border-[#E00000]/50 px-5 py-2 text-sm font-semibold text-[#F5E6CC] transition-colors hover:bg-[#E00000] hover:text-white"
+            className="mt-6 inline-flex self-start items-center gap-2 rounded-full border border-[#8B0000]/50 px-5 py-2 text-sm font-semibold text-[#8B0000] transition-colors hover:bg-[#8B0000] hover:text-[#FDFBF7]"
           >
             {expanded
               ? showEnglish ? "Show less" : "በአጭሩ አሳይ"
@@ -313,7 +314,7 @@ function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; l
           </button>
         )}
 
-        <p className="mt-10 pt-6 border-t border-[#E00000]/20 text-sm font-serif italic text-[#E00000]/80 text-right">
+        <p className="mt-10 pt-6 border-t border-black/10 text-sm font-serif italic text-[#8B0000]/80 text-right">
           &mdash; {attribution}
         </p>
       </div>
@@ -333,7 +334,7 @@ function ArrowButton({
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous proverb" : "Next proverb"}
-      className="grid h-12 w-12 place-items-center rounded-full border border-[#F5E6CC]/20 bg-[#181818] text-[#E00000] transition-all hover:border-[#E00000] hover:bg-[#E00000] hover:text-[#000000] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E00000] active:scale-95 shadow-lg"
+      className="grid h-12 w-12 place-items-center rounded-full border border-black/10 bg-white text-[#8B0000] transition-all hover:border-[#8B0000] hover:bg-[#8B0000] hover:text-[#FDFBF7] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8B0000] active:scale-95 shadow-md"
     >
       <svg
         viewBox="0 0 24 24"
