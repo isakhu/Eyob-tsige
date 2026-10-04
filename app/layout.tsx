@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, Noto_Serif_Ethiopic } from "next/font/google";
+import { Pacifico, Noto_Serif_Ethiopic } from "next/font/google";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const pacifico = Pacifico({
+  weight: "400",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-display",
-});
-
-const sans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans",
+  variable: "--font-pacifico",
 });
 
 const notoEthiopic = Noto_Serif_Ethiopic({
@@ -21,9 +15,9 @@ const notoEthiopic = Noto_Serif_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: "Eyob Tsige Terefe — Education, Media & Leadership",
+  title: "Eyob Tsige Terefe",
   description:
-    "The professional profile of Eyob Tsige Terefe, bringing together education, leadership, media, entrepreneurship and wisdom.",
+    "The professional profile of Eyob Tsige Terefe — education, leadership, media and community work.",
 };
 
 export default function RootLayout({
@@ -31,9 +25,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={display.variable + " " + sans.variable + " " + notoEthiopic.variable}>
-        {children}
-      </body>
+      <body className={`${pacifico.variable} ${notoEthiopic.variable} antialiased bg-[#FDFBF7]`}>{children}</body>
     </html>
   );
 }
