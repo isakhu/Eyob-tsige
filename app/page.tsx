@@ -5,167 +5,186 @@ import Blog from "./components/Blog";
 import { proverbs } from "./data/proverbs";
 
 const education = [
-  { school: "Dilla University", program: "Master of Arts in Counseling Psychology", status: "Class of 2019", image: "/images/education/dilla.jpg" },
-  { school: "Hawassa University", program: "Master of Arts in Educational Leadership and Management", status: "Class of 2014", image: "/images/education/hawassa.jpg" },
-  { school: "Otto-Friedrich-Universität Bamberg", program: "Master of Arts in Educational Quality", status: "Graduated", image: "/images/education/bamberg.jpg" },
-  { school: "Jimma University", program: "BSc in Business Administration and Information Systems", status: "Class of 2012", image: "/images/education/jimma.jpg" },
-  { school: "HiLCoE School of Computer Science and Technology", program: "BSc in Computer Science", status: "Class of 2009", image: "/images/education/hilcoe.jpg" },
-  { school: "Kotebe University of Education", program: "Mathematics major, Physics minor", status: "Class of 2000", image: "/images/education/kotebe.jpg" },
+  {
+    school: "Dilla University",
+    program: "Master of Arts in Counseling Psychology",
+    status: "Class of 2019",
+    image: "/images/education/dilla.jpg",
+  },
+  {
+    school: "Hawassa University",
+    program: "Master of Arts in Educational Leadership and Management",
+    status: "Class of 2014",
+    image: "/images/education/hawassa.jpg",
+  },
+  {
+    school: "Otto-Friedrich-Universität Bamberg",
+    program: "Master of Arts in Educational Quality",
+    status: "Graduated",
+    image: "/images/education/bamberg.jpg",
+  },
+  {
+    school: "Jimma University",
+    program: "BSc in Business Administration and Information Systems",
+    status: "Class of 2012",
+    image: "/images/education/jimma.jpg",
+  },
+  {
+    school: "HiLCoE School of Computer Science and Technology",
+    program: "BSc in Computer Science",
+    status: "Class of 2009",
+    image: "/images/education/hilcoe.jpg",
+  },
+  {
+    school: "Kotebe University of Education",
+    program: "Mathematics major, Physics minor",
+    status: "Class of 2000",
+    image: "/images/education/kotebe.jpg",
+  },
 ];
 
-const navItems = [
-  { label: "Story", href: "#story" },
-  { label: "Work", href: "#organizations" },
-  { label: "Education", href: "#education" },
-  { label: "Wisdom", href: "#proverbs" },
-  { label: "Journal", href: "#blog" },
-];
-
-function ArrowIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export default function Home() {
   return (
-    <main className="site-shell">
-      <header className="site-header">
-        <div className="site-header__inner">
+    <main className="bg-[#FDFBF7] text-[#1A1A1A] min-h-screen font-sans selection:bg-[#8B0000] selection:text-[#FDFBF7]">
+      {/* Fixed Top Header with Logo (stays in place while scrolling) */}
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-[#FDFBF7]/80 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.05)]">
+        <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-6 md:h-20">
           <a href="#" className="brand-mark" aria-label="Eyob Tsige Terefe — Home" style={{ display: 'flex', alignItems: 'center' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/images/logo.png" 
               alt="Eyob Tsige Terefe Logo" 
-              style={{ height: '4rem', width: 'auto', mixBlendMode: 'multiply', transition: 'transform 0.3s ease' }}
+              style={{ height: '4rem', width: 'auto', mixBlendMode: 'multiply', transition: 'transform 0.3s ease' }} 
             />
           </a>
-
-          <nav className="site-nav" aria-label="Primary navigation">
-            {navItems.map((item) => (
-              <a key={item.href} href={item.href}>{item.label}</a>
-            ))}
-          </nav>
-
-          <a href="#contact" className="header-cta">
-            Connect
-            <ArrowIcon />
-          </a>
         </div>
+        {/* Thin accent line */}
+        <div className="h-px w-full bg-[linear-gradient(90deg,transparent,#8B0000_30%,#D4A63A_70%,transparent)] opacity-60" />
       </header>
 
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__texture" aria-hidden="true" />
-        <div className="hero__inner">
-          <div className="hero__copy">
-            <p className="eyebrow">
-              <span className="eyebrow__line" />
-              Educator · Media · Leadership
-            </p>
-            <h1 id="hero-title">
-              Eyob
-              <span>Tsige Terefe</span>
-            </h1>
-            <p className="hero__lead">
-              Building a life around ideas that educate, stories that move people,
-              and leadership that leaves something useful behind.
-            </p>
+      {/* Floating Glass Navigation */}
+      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4">
+        {/* Main Pill */}
+        <nav className="flex items-center gap-3 px-6 py-4 rounded-full bg-[#FDFBF7]/90 backdrop-blur-xl border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.15)] overflow-x-auto max-w-[90vw] scrollbar-hide">
+          <a href="#" className="shrink-0 p-2 rounded-full hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]" aria-label="Home">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+          </a>
+          <a href="#organizations" className="shrink-0 p-2 rounded-full hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]" aria-label="Organizations">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+            </svg>
+          </a>
+          <a href="#education" className="shrink-0 p-2 rounded-full hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]" aria-label="Education">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+            </svg>
+          </a>
+          <a href="#proverbs" className="shrink-0 p-2 rounded-full hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]" aria-label="Wisdom & Proverbs">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </a>
+          <a href="#blog" className="shrink-0 p-2 rounded-full hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]" aria-label="Blog">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </a>
+        </nav>
+        {/* Search Circle */}
+        <button aria-label="Search" className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[#FDFBF7]/90 backdrop-blur-xl border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+        </button>
+      </div>
 
-            <div className="hero__actions">
-              <a href="#story" className="button button--primary">
-                Explore the story
-                <ArrowIcon />
-              </a>
-              <a href="#proverbs" className="button button--text">
-                Read the wisdom
-                <ArrowIcon />
-              </a>
-            </div>
+      {/* Hero Section */}
+      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
+        {/* Background portrait */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/hero-profile.jpg"
+          alt="Eyob Tsige Terefe speaking with a microphone"
+          fetchPriority="high"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[72%_center] md:object-right animate-[heroZoom_18s_ease-out_forwards]"
+        />
+        {/* Readability overlays: light fade from the left + blend into page at the bottom */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#FDFBF7_0%,rgba(253,251,247,0.92)_30%,rgba(253,251,247,0.45)_58%,rgba(253,251,247,0)_80%)] max-md:bg-[linear-gradient(0deg,#FDFBF7_10%,rgba(253,251,247,0.85)_45%,rgba(253,251,247,0.25)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-[linear-gradient(0deg,#FDFBF7,transparent)]" />
+        {/* Subtle warm glow */}
+        <div className="absolute -left-40 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-[#D4A63A]/15 blur-[140px]" />
 
-            <div className="hero__credentials" aria-label="Current leadership roles">
-              <div><span>Based in</span><strong>Hawassa, Ethiopia</strong></div>
-              <div><span>Owner &amp; CEO</span><strong>SEMAY Multimedia</strong></div>
-              <div><span>Education</span><strong>Union Academy</strong></div>
-            </div>
+        <div className="mx-auto w-full max-w-6xl px-6 pb-40 pt-[45vh] md:py-32">
+        <div className="flex max-w-xl flex-col justify-center animate-[heroFadeUp_1s_ease-out_both]">
+          <p className="mb-5 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.25em] text-[#8B0000]">
+            <span className="h-[2px] w-10 bg-[#8B0000]" />
+            Educator · Media · Leadership
+          </p>
+          <h1 className="text-6xl md:text-8xl leading-[0.95] tracking-normal font-['Impact',_sans-serif] text-[#1A1A1A] uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
+            Eyob Tsige<br />Terefe
+          </h1>
+          <p className="mt-7 max-w-2xl leading-relaxed text-[#1A1A1A]/80 font-['var(--font-pacifico)',_cursive] text-3xl">
+            Education, Media & Leadership.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a href="#proverbs" className="rounded bg-[#8B0000] px-8 py-3.5 text-sm font-bold text-[#FDFBF7] shadow-[0_4px_15px_rgba(139,0,0,0.3)] hover:bg-[#5C0000] transition-all hover:-translate-y-1 font-['Impact',_sans-serif] uppercase tracking-wide">
+              Read Proverbs & Wisdom
+            </a>
+            <a href="#organizations" className="rounded border-2 border-[#8B0000] bg-white/40 backdrop-blur-sm px-8 py-3.5 text-sm font-bold text-[#8B0000] hover:bg-[#8B0000]/10 transition-colors font-['Impact',_sans-serif] uppercase tracking-wide">
+              Organizations
+            </a>
           </div>
 
-          <div className="hero__portrait">
-            <div className="portrait-frame portrait-frame--outer" aria-hidden="true" />
-            <div className="portrait-frame portrait-frame--inner" aria-hidden="true" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/hero-profile.jpg" alt="Eyob Tsige Terefe speaking with a microphone" fetchPriority="high" />
-            <div className="portrait-caption">
-              <span>01</span>
-              <div>
-                <strong>Purpose before profile.</strong>
-                <small>A public record of work, learning &amp; reflection.</small>
-              </div>
+          {/* Based-in glass card */}
+          <div className="mt-12 flex max-w-lg flex-col gap-4 rounded-xl border border-black/5 border-l-4 border-l-[#8B0000] bg-white/70 p-6 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] sm:flex-row sm:items-center sm:gap-8">
+            <div className="shrink-0">
+              <p className="text-xs text-[#8B0000] tracking-[0.2em] uppercase font-['Impact',_sans-serif]">Based in</p>
+              <p className="mt-1 text-2xl font-['var(--font-pacifico)',_cursive] text-[#1A1A1A]">Hawassa, Ethiopia</p>
+            </div>
+            <div className="space-y-2 text-sm leading-relaxed text-[#1A1A1A]/85 font-medium sm:border-l sm:border-black/10 sm:pl-8">
+              <p className="flex items-center gap-3">
+                <span className="w-2 h-2 shrink-0 bg-[#D4A63A] rotate-45"></span>
+                Owner & CEO, SEMAY Multimedia
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="w-2 h-2 shrink-0 bg-[#D4A63A] rotate-45"></span>
+                Director, Union Academy
+              </p>
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="story" className="story section-light">
-        <div className="section-container story__grid">
-          <div className="section-kicker"><span>01</span>The throughline</div>
-          <div className="story__copy">
-            <p className="display-label">A life shaped by learning</p>
-            <h2>Education is the foundation.<em>Leadership is the responsibility.</em></h2>
-            <p>
-              Eyob Tsige Terefe brings together education, media, entrepreneurship,
-              and reflective writing under one personal philosophy: knowledge should
-              not sit still. It should move people, improve institutions, and create
-              practical value.
-            </p>
-            <p>
-              This space brings those dimensions together — the organizations he
-              leads, the academic path behind his work, and a growing archive of
-              proverbs and reflections.
-            </p>
-            <a href="#organizations" className="story-link">See the work<ArrowIcon /></a>
-          </div>
-          <div className="story__aside">
-            <span className="story__quote-mark">“</span>
-            <p>The strongest personal brand is not a louder name. It is a body of work people can trust.</p>
-            <span className="story__rule" />
-            <span className="story__caption">Education · Media · Leadership</span>
-          </div>
         </div>
       </section>
+
+
 
       <Organizations />
 
-      <section id="education" className="education section-dark">
-        <div className="section-container">
-          <div className="section-heading section-heading--dark">
-            <div>
-              <div className="section-kicker"><span>03</span>Academic formation</div>
-              <p className="display-label">Six chapters of study</p>
-              <h2>Different disciplines. One expanding lens.</h2>
-            </div>
-            <p className="section-heading__note">
-              Psychology, leadership, education, business, computing, mathematics and
-              physics — an interdisciplinary foundation for complex work.
-            </p>
+      {/* Education Section */}
+      <section id="education" className="bg-[#FDFBF7] text-[#1A1A1A]">
+        <div className="mx-auto max-w-7xl px-6 py-28">
+          <div className="flex flex-col items-center text-center mb-16">
+            <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Education</p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-['Impact',_sans-serif] uppercase tracking-wide md:text-5xl text-[#1A1A1A]">
+              An interdisciplinary academic path.
+            </h2>
           </div>
+          
           <EducationCard items={education} />
         </div>
       </section>
 
-      <section id="proverbs" className="wisdom section-cream">
-        <div className="section-container">
-          <div className="section-heading">
-            <div>
-              <div className="section-kicker"><span>04</span>The wisdom archive</div>
-              <p className="display-label">Words worth returning to</p>
-              <h2>Proverbs, prayers &amp; reflections.</h2>
-            </div>
-            <p className="section-heading__note">
-              A bilingual collection designed to preserve the ideas, lessons and
-              observations that continue to shape a life.
-            </p>
+      {/* Proverbs Section */}
+      <section id="proverbs" className="border-y border-black/5 bg-[#F5F0E6] py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-col items-center text-center mb-12">
+            <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Words of Wisdom</p>
+            <h2 className="mt-4 max-w-3xl text-5xl font-['var(--font-pacifico)',_cursive] text-[#1A1A1A]">
+              Proverbs & Reflections
+            </h2>
           </div>
           <ProverbCarousel items={proverbs} />
         </div>
@@ -173,29 +192,14 @@ export default function Home() {
 
       <Blog />
 
-      <footer id="contact" className="site-footer">
-        <div className="section-container">
-          <div className="footer-top">
-            <div>
-              <p className="eyebrow eyebrow--light"><span className="eyebrow__line" />Eyob Tsige Terefe</p>
-              <h2>Ideas become valuable when they become useful.</h2>
-            </div>
-            <a className="button button--outline-light" href="https://t.me/EYOBBOOKSHAWASSA" target="_blank" rel="noopener noreferrer">
-              Connect on Telegram
-              <ArrowIcon />
-            </a>
-          </div>
-
-          <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
-            <div className="footer-links">
-              <a href="#story">Story</a>
-              <a href="#organizations">Work</a>
-              <a href="#education">Education</a>
-              <a href="#proverbs">Wisdom</a>
-              <a href="#blog">Journal</a>
-            </div>
-          </div>
+      {/* Footer */}
+      <footer className="border-t border-black/5 bg-[#FDFBF7]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-12 text-sm text-[#1A1A1A]/60 md:flex-row md:items-center md:justify-between">
+          <p className="font-['Impact',_sans-serif] tracking-widest text-lg uppercase">© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
+          <p className="flex items-center gap-2 font-medium">
+            <span className="w-2 h-2 bg-[#D4A63A] rotate-45"></span>
+            More verified biography and media content will be added.
+          </p>
         </div>
       </footer>
     </main>
