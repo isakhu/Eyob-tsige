@@ -88,7 +88,7 @@ export default function Home() {
 
             <div className="hero__credentials" aria-label="Current leadership roles">
               <div><span>Based in</span><strong>Hawassa, Ethiopia</strong></div>
-              <div><span>Founder / Executive</span><strong>SEMAY Multimedia</strong></div>
+              <div><span>Owner &amp; CEO</span><strong>SEMAY Multimedia</strong></div>
               <div><span>Education</span><strong>Union Academy</strong></div>
             </div>
           </div>
