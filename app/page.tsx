@@ -5,42 +5,12 @@ import Blog from "./components/Blog";
 import { proverbs } from "./data/proverbs";
 
 const education = [
-  {
-    school: "Dilla University",
-    program: "Master of Arts in Counseling Psychology",
-    status: "Class of 2019",
-    image: "/images/education/dilla.jpg",
-  },
-  {
-    school: "Hawassa University",
-    program: "Master of Arts in Educational Leadership and Management",
-    status: "Class of 2014",
-    image: "/images/education/hawassa.jpg",
-  },
-  {
-    school: "Otto-Friedrich-Universität Bamberg",
-    program: "Master of Arts in Educational Quality",
-    status: "Graduated",
-    image: "/images/education/bamberg.jpg",
-  },
-  {
-    school: "Jimma University",
-    program: "BSc in Business Administration and Information Systems",
-    status: "Class of 2012",
-    image: "/images/education/jimma.jpg",
-  },
-  {
-    school: "HiLCoE School of Computer Science and Technology",
-    program: "BSc in Computer Science",
-    status: "Class of 2009",
-    image: "/images/education/hilcoe.jpg",
-  },
-  {
-    school: "Kotebe University of Education",
-    program: "Mathematics major, Physics minor",
-    status: "Class of 2000",
-    image: "/images/education/kotebe.jpg",
-  },
+  { school: "Dilla University", program: "Master of Arts in Counseling Psychology", status: "Class of 2019", image: "/images/education/dilla.jpg" },
+  { school: "Hawassa University", program: "Master of Arts in Educational Leadership and Management", status: "Class of 2014", image: "/images/education/hawassa.jpg" },
+  { school: "Otto-Friedrich-Universität Bamberg", program: "Master of Arts in Educational Quality", status: "Graduated", image: "/images/education/bamberg.jpg" },
+  { school: "Jimma University", program: "BSc in Business Administration and Information Systems", status: "Class of 2012", image: "/images/education/jimma.jpg" },
+  { school: "HiLCoE School of Computer Science and Technology", program: "BSc in Computer Science", status: "Class of 2009", image: "/images/education/hilcoe.jpg" },
+  { school: "Kotebe University of Education", program: "Mathematics major, Physics minor", status: "Class of 2000", image: "/images/education/kotebe.jpg" },
 ];
 
 const navItems = [
@@ -54,20 +24,14 @@ const navItems = [
 function ArrowIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M5 12h13M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
 export default function Home() {
   return (
-    <main className="site-shell selection:bg-[var(--maroon)] selection:text-white">
+    <main className="site-shell">
       <header className="site-header">
         <div className="site-header__inner">
           <a href="#" className="brand-mark" aria-label="Eyob Tsige Terefe — Home">
@@ -83,9 +47,7 @@ export default function Home() {
 
           <nav className="site-nav" aria-label="Primary navigation">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
+              <a key={item.href} href={item.href}>{item.label}</a>
             ))}
           </nav>
 
@@ -125,18 +87,9 @@ export default function Home() {
             </div>
 
             <div className="hero__credentials" aria-label="Current leadership roles">
-              <div>
-                <span>Based in</span>
-                <strong>Hawassa, Ethiopia</strong>
-              </div>
-              <div>
-                <span>Founder / Executive</span>
-                <strong>SEMAY Multimedia</strong>
-              </div>
-              <div>
-                <span>Education</span>
-                <strong>Union Academy</strong>
-              </div>
+              <div><span>Based in</span><strong>Hawassa, Ethiopia</strong></div>
+              <div><span>Founder / Executive</span><strong>SEMAY Multimedia</strong></div>
+              <div><span>Education</span><strong>Union Academy</strong></div>
             </div>
           </div>
 
@@ -144,11 +97,7 @@ export default function Home() {
             <div className="portrait-frame portrait-frame--outer" aria-hidden="true" />
             <div className="portrait-frame portrait-frame--inner" aria-hidden="true" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/hero-profile.jpg"
-              alt="Eyob Tsige Terefe speaking with a microphone"
-              fetchPriority="high"
-            />
+            <img src="/images/hero-profile.jpg" alt="Eyob Tsige Terefe speaking with a microphone" fetchPriority="high" />
             <div className="portrait-caption">
               <span>01</span>
               <div>
@@ -162,16 +111,10 @@ export default function Home() {
 
       <section id="story" className="story section-light">
         <div className="section-container story__grid">
-          <div className="section-kicker">
-            <span>01</span>
-            The throughline
-          </div>
+          <div className="section-kicker"><span>01</span>The throughline</div>
           <div className="story__copy">
             <p className="display-label">A life shaped by learning</p>
-            <h2>
-              Education is the foundation.
-              <em>Leadership is the responsibility.</em>
-            </h2>
+            <h2>Education is the foundation.<em>Leadership is the responsibility.</em></h2>
             <p>
               Eyob Tsige Terefe brings together education, media, entrepreneurship,
               and reflective writing under one personal philosophy: knowledge should
@@ -183,17 +126,11 @@ export default function Home() {
               leads, the academic path behind his work, and a growing archive of
               proverbs and reflections.
             </p>
-            <a href="#organizations" className="story-link">
-              See the work
-              <ArrowIcon />
-            </a>
+            <a href="#organizations" className="story-link">See the work<ArrowIcon /></a>
           </div>
           <div className="story__aside">
             <span className="story__quote-mark">“</span>
-            <p>
-              The strongest personal brand is not a louder name. It is a body of
-              work people can trust.
-            </p>
+            <p>The strongest personal brand is not a louder name. It is a body of work people can trust.</p>
             <span className="story__rule" />
             <span className="story__caption">Education · Media · Leadership</span>
           </div>
@@ -206,7 +143,7 @@ export default function Home() {
         <div className="section-container">
           <div className="section-heading section-heading--dark">
             <div>
-              <div className="section-kicker"><span>03</span> Academic formation</div>
+              <div className="section-kicker"><span>03</span>Academic formation</div>
               <p className="display-label">Six chapters of study</p>
               <h2>Different disciplines. One expanding lens.</h2>
             </div>
@@ -223,7 +160,7 @@ export default function Home() {
         <div className="section-container">
           <div className="section-heading">
             <div>
-              <div className="section-kicker"><span>04</span> The wisdom archive</div>
+              <div className="section-kicker"><span>04</span>The wisdom archive</div>
               <p className="display-label">Words worth returning to</p>
               <h2>Proverbs, prayers &amp; reflections.</h2>
             </div>
@@ -242,10 +179,7 @@ export default function Home() {
         <div className="section-container">
           <div className="footer-top">
             <div>
-              <p className="eyebrow eyebrow--light">
-                <span className="eyebrow__line" />
-                Eyob Tsige Terefe
-              </p>
+              <p className="eyebrow eyebrow--light"><span className="eyebrow__line" />Eyob Tsige Terefe</p>
               <h2>Ideas become valuable when they become useful.</h2>
             </div>
             <a className="button button--outline-light" href="https://t.me/EYOBBOOKSHAWASSA" target="_blank" rel="noopener noreferrer">
@@ -255,7 +189,7 @@ export default function Home() {
           </div>
 
           <div className="footer-bottom">
-            <p>© \${new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
             <div className="footer-links">
               <a href="#story">Story</a>
               <a href="#organizations">Work</a>
