@@ -34,15 +34,13 @@ export default function Home() {
     <main className="site-shell">
       <header className="site-header">
         <div className="site-header__inner">
-          <a href="#" className="brand-mark" aria-label="Eyob Tsige Terefe — Home">
-            <span className="brand-mark__seal">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/logo-mark.png" alt="" />
-            </span>
-            <span className="brand-mark__type">
-              <span className="brand-mark__name">EYOB TSIGE</span>
-              <span className="brand-mark__sub">TEREFE</span>
-            </span>
+          <a href="#" className="brand-mark" aria-label="Eyob Tsige Terefe — Home" style={{ display: 'flex', alignItems: 'center' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/logo.png" 
+              alt="Eyob Tsige Terefe Logo" 
+              style={{ height: '4rem', width: 'auto', mixBlendMode: 'multiply', transition: 'transform 0.3s ease' }}
+            />
           </a>
 
           <nav className="site-nav" aria-label="Primary navigation">
