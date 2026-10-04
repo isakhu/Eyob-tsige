@@ -1,7 +1,20 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useState } from "react";
 import { bookstoreImages } from "../data/bookstoreImages";
 
 export default function Organizations() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showGallery, setShowGallery] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === "left" ? -300 : 300;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="organizations" className="bg-[#FDFBF7] py-24 border-t border-black/5">
       <div className="mx-auto max-w-7xl px-6">
@@ -19,11 +32,14 @@ export default function Organizations() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/books/bookstore1.png" alt="Eyob Tsige Bookstore" className="w-full h-full object-cover" />
             </div>
-            <div className="flex gap-1 h-32 mt-1 overflow-x-auto snap-x pb-1" style={{ scrollbarWidth: 'none' }}>
-              {bookstoreImages.map((filename, i) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={`/images/books/eyob-books/${filename}`} alt={`Eyob Tsige Bookstore Book ${i + 1}`} className="w-[49.5%] md:w-[32.5%] h-full object-cover shrink-0 snap-start rounded-sm" loading="lazy" />
-              ))}
+            <div className="bg-[#1A1A1A] p-4 text-center">
+              <button 
+                onClick={() => setShowGallery(true)}
+                className="text-sm font-bold text-[#D4A63A] hover:text-white uppercase tracking-widest flex items-center justify-center w-full gap-2 transition-colors py-1"
+              >
+                View Full Book Gallery ({bookstoreImages.length} Books)
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+              </button>
             </div>
             <div className="p-8">
               <h3 className="text-2xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A]">Eyob Tsige Bookstore</h3>
@@ -128,6 +144,73 @@ export default function Organizations() {
           </div>
         </div>
       </div>
+
+      {/* Fullscreen Gallery Grid */}
+      {showGallery && (
+        <div className="fixed inset-0 z-[100] flex flex-col bg-[#FDFBF7] animate-[heroFadeUp_0.3s_ease-out_both]">
+          <div className="flex items-center justify-between p-6 border-b border-black/10 bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm">
+            <div>
+              <h2 className="text-2xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A] tracking-wider">Eyob Tsige Bookstore</h2>
+              <p className="text-sm font-bold text-[#8B0000]">{bookstoreImages.length} Books Available</p>
+            </div>
+            <button 
+              className="text-[#1A1A1A] hover:text-white hover:bg-[#8B0000] transition-colors p-2 bg-black/5 rounded-full"
+              onClick={() => setShowGallery(false)}
+              aria-label="Close gallery"
+            >
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+          </div>
+          
+          <div className="flex-1 overflow-y-auto p-6 md:p-10">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-[1600px] mx-auto">
+              {bookstoreImages.map((filename, i) => (
+                <div 
+                  key={i} 
+                  className="group relative aspect-[3/4] rounded-lg overflow-hidden border border-black/10 shadow-sm hover:shadow-xl transition-all cursor-pointer bg-white" 
+                  onClick={() => setSelectedImage(filename)}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={`/images/books/eyob-books/${filename}`} 
+                    alt={`Eyob Tsige Bookstore Book ${i + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                    loading="lazy" 
+                  />
+                  <div className="absolute inset-0 bg-[#8B0000]/0 group-hover:bg-[#8B0000]/20 transition-colors flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen Single Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[120] flex items-center justify-center bg-black/95 p-4 md:p-8 animate-[heroFadeUp_0.2s_ease-out_both]"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-[110] bg-white/10 hover:bg-white/20 p-2 rounded-full"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close fullscreen"
+          >
+            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+          
+          <div className="relative w-full max-w-5xl h-full max-h-[90vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src={`/images/books/eyob-books/${selectedImage}`} 
+              alt="Fullscreen Book Cover" 
+              className="max-w-full max-h-[90vh] object-contain rounded-md shadow-2xl" 
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

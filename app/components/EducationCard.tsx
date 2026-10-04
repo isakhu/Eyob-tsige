@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 type EducationItem = {
   school: string;
@@ -11,6 +11,7 @@ type EducationItem = {
 
 export default function EducationCard({ items }: { items: EducationItem[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isUnlocked, setIsUnlocked] = useState(false);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -19,8 +20,46 @@ export default function EducationCard({ items }: { items: EducationItem[] }) {
     }
   };
 
+  if (!isUnlocked) {
+    return (
+      <div className="relative w-full max-w-7xl mx-auto px-4 flex justify-center py-8">
+        <button 
+          onClick={() => setIsUnlocked(true)}
+          className="group relative flex flex-col items-center justify-center w-full max-w-2xl bg-[#1A1A1A] rounded-3xl border border-[#D4A63A]/40 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(212,166,58,0.2)] p-12 md:p-16 text-center"
+        >
+          {/* Decorative Background */}
+          <div className="absolute inset-0 bg-[#F5F0E6] opacity-5 group-hover:opacity-10 transition-opacity" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_top_right,#8B0000_0%,transparent_70%)] opacity-30"></div>
+          
+          <div className="relative z-10 flex flex-col items-center">
+            {/* Lock Icon */}
+            <div className="w-20 h-20 rounded-full bg-white/5 border border-white/20 flex items-center justify-center mb-8 group-hover:bg-[#8B0000] group-hover:border-[#8B0000] transition-colors duration-500">
+              <svg className="w-10 h-10 text-[#D4A63A] group-hover:text-white transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            
+            <h3 className="text-4xl md:text-5xl font-['Impact',_sans-serif] uppercase text-[#FDFBF7] tracking-wider mb-4">
+              Academic Journey
+            </h3>
+            <p className="text-[#D4A63A] font-medium text-lg md:text-xl mb-10 tracking-wide font-['Georgia',_'Times_New_Roman',_serif] italic">
+              {items.length} Degrees &amp; Certifications
+            </p>
+            
+            <span className="inline-flex items-center gap-3 rounded-full bg-[#8B0000] px-8 py-4 text-sm font-bold text-white uppercase tracking-widest shadow-lg group-hover:bg-white group-hover:text-[#8B0000] transition-colors">
+              Click to Unlock
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+          </div>
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4">
+    <div className="relative w-full max-w-7xl mx-auto px-4 animate-[heroFadeUp_0.8s_ease-out_both] opacity-0" style={{ animationFillMode: 'forwards' }}>
       {/* Scrollable Container */}
       <div 
         ref={scrollRef}
@@ -29,6 +68,10 @@ export default function EducationCard({ items }: { items: EducationItem[] }) {
       >
         <style dangerouslySetInnerHTML={{__html: `
           .hide-scrollbar::-webkit-scrollbar { display: none; }
+          @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
         `}} />
         
         {items.map((item, i) => (
@@ -37,13 +80,13 @@ export default function EducationCard({ items }: { items: EducationItem[] }) {
             className="snap-center shrink-0 w-[85vw] sm:w-[350px] md:w-[400px] bg-white rounded-3xl border border-black/10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] overflow-hidden transition-all duration-500 hover:shadow-lg group flex flex-col h-full"
           >
             {item.image ? (
-              <div className="relative w-full h-48 shrink-0 overflow-hidden bg-[#F5F0E6]">
+              <div className="relative w-full h-48 shrink-0 overflow-hidden bg-[#F5F0E6] flex items-center justify-center p-6">
                 <div className="absolute inset-0 bg-[#8B0000]/10 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={item.image} 
                   alt={item.school} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             ) : (
