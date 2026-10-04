@@ -2,6 +2,7 @@ import ProverbCarousel from "./components/ProverbCarousel";
 import EducationCard from "./components/EducationCard";
 import Organizations from "./components/Organizations";
 import { proverbs } from "./data/proverbs";
+import Reveal from "./components/Reveal";
 
 const education = [
   {
@@ -151,10 +152,10 @@ export default function Home() {
 
 
 
-      <Organizations />
+      <Reveal><Organizations /></Reveal>
 
       {/* Education Section */}
-      <section id="education" className="bg-[#FDFBF7] text-[#1A1A1A]">
+      <Reveal><section id="education" className="bg-[#FDFBF7] text-[#1A1A1A]">
         <div className="mx-auto max-w-7xl px-6 py-28">
           <div className="flex flex-col items-center text-center mb-16">
             <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Education</p>
@@ -162,10 +163,10 @@ export default function Home() {
           
           <EducationCard items={education} />
         </div>
-      </section>
+      </section></Reveal>
 
       {/* Proverbs Section */}
-      <section id="proverbs" className="border-y border-black/5 bg-[#F5F0E6] py-24">
+      <Reveal><section id="proverbs" className="border-y border-black/5 bg-[#F5F0E6] py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center text-center mb-12">
             <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Words of Wisdom</p>
@@ -175,11 +176,11 @@ export default function Home() {
           </div>
           <ProverbCarousel items={proverbs} />
         </div>
-      </section>
+      </section></Reveal>
 
 
       {/* Footer */}
-      <footer className="border-t border-black/5 bg-[#FDFBF7]">
+      <Reveal><footer className="border-t border-black/5 bg-[#FDFBF7]">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-12 text-sm text-[#1A1A1A]/60 md:flex-row md:items-center md:justify-between">
           <p className="font-['Impact',_sans-serif] tracking-widest text-lg uppercase">© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
           <p className="flex items-center gap-2 font-medium">
@@ -187,7 +188,7 @@ export default function Home() {
             More verified biography and media content will be added.
           </p>
         </div>
-      </footer>
+      </footer></Reveal>
     </main>
   );
 }
