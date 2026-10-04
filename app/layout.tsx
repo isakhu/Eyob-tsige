@@ -31,7 +31,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={\`\${display.variable} \${sans.variable} \${notoEthiopic.variable}\`}>
+      <body className={display.variable + " " + sans.variable + " " + notoEthiopic.variable}>
         {children}
       </body>
     </html>
