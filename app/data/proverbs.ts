@@ -32,7 +32,6 @@ export const proverbs: Proverb[] = [
       "ከትልቅ ዛፍ ጥላ ስር የሚያርፉት አብዛኞቹ ሰዎች ዛፉን የተከለውን ሰው አያውቁትም፤ ነገር ግን ዛፉ አሁንም ጥላ መስጠቱን ይቀጥላል።",
     english:
       "Most people who rest in the shade of a great tree do not know the one who planted it; yet the tree keeps on giving shade.",
-  ,
     categories: ["Wisdom","Life"],
     meaning: "True legacy is leaving behind something that benefits others, even if they don't know you."
   },
@@ -41,7 +40,6 @@ export const proverbs: Proverb[] = [
       "የምንሰጠው ምክር፣ የምንሰጠው ፍቅር፣ የምንሰጠው ጊዜ፣ የምንሰጠው ሀሳብ፣ የምንሰጠው አንዳች ነገር አያሳጣን።",
     english:
       "The advice we give, the love we give, the time we give, the ideas we give — nothing we give will ever leave us poorer.",
-  ,
     categories: ["Love","Responsibility","Relationships"],
     meaning: "Giving good things like love and advice to others enriches us rather than diminishing what we have."
   },
@@ -62,7 +60,6 @@ export const proverbs: Proverb[] = [
       "In the end, great success is built not by one massive, storm-like burst of effort overnight, but by the combined result of the deliberate, consistent steps we take every day.",
       "A steadfast principle designed by the Norwegian sailor Roald Amundsen in the early 1900s."
     ].join("\n"),
-  ,
     categories: ["Success","Perseverance","Work"],
     meaning: "Success comes from consistent, steady daily progress, not unpredictable bursts of effort."
   },
@@ -71,7 +68,6 @@ export const proverbs: Proverb[] = [
       "ሕይወት ልክ እንደ ወይን ናት፤ በቆየችና በተፈተነች ቁጥር እየነጠረች ትሄዳለች።\n\nወይን በጨለማና በታሸገ በርሜል ውስጥ ለረጅም ጊዜ እንደሚያሳልፍ ሁሉ፣ ህይወትም በተለያዩ ፈተናዎችና የትግል ወቅት ውስጥ አልፋ ነው እውነተኛ ጣዕሟንና ክብሯን የምታገኘው። ይህ የበሰለና የነጠረ ማንነትን ይዞ ለመውጣት የሚደረግ ድንቅ ጉዞ ነው።",
     english:
       "Life is just like wine; the longer it ages and the more it is tested, the more refined it becomes.\n\nJust as wine spends a long time in a dark, sealed barrel, life too finds its true flavour and dignity only after passing through trials and seasons of struggle. It is a remarkable journey toward emerging with a mature and refined character.",
-  ,
     categories: ["Life","Patience","Wisdom"],
     meaning: "Life's difficulties and the passage of time build our character and inner strength."
   },
@@ -80,7 +76,6 @@ export const proverbs: Proverb[] = [
       "ኖረው ከማይደርሱ፣ በቁም ከተረሱ ይልቅ ሞተው የሚናፈቁ ወዳጆች ያፅናናሉ። የአንዳንዶች ፍቅር ትንሳኤ ያለው ፍቅር ነው። ከሟቹ ጋር አብሮ የማይቀበር ፍቅር።",
     english:
       "Friends who are missed after they are gone comfort us more than those who are alive yet never reach us, forgotten while still living. Some people's love is a love with a resurrection — a love that is not buried with the departed.",
-  ,
     categories: ["Friendship","Relationships","Love"],
     meaning: "A true friend leaves a lasting emotional impact that outlives their physical presence."
   },
@@ -89,7 +84,6 @@ export const proverbs: Proverb[] = [
       "ከአንድ ውሸት በኋላ የሚመጡ እውነቶች ሁሉ ያጠራጥሩኛል። ስህተትን ለማረም፣ ሰዎችን ለማሳመን፣ ተቀባይነትን ለማግኘት ብለህ መታመንህን አትጣ።",
     english:
       "After one lie, all subsequent truths become questionable to me. Do not lose your trustworthiness just to correct a mistake, convince people, or gain acceptance.",
-  ,
     categories: ["Honesty","Wisdom"],
     meaning: "A single lie can permanently destroy your credibility and make people doubt your future truths."
   },
@@ -97,14 +91,12 @@ export const proverbs: Proverb[] = [
     amharic: "ሰው ሆዱን አስፍቶ ሲወድቅ እንጂ ሲቆም አላየንም።",
     english: "We have only seen a person fall when expanding their stomach (in greed), never stand tall.",
     attribution: "የገበታ ገፅ",
-  ,
     categories: ["Human Nature","Wisdom"],
     meaning: "Greed and selfishness ultimately lead to a person's downfall, not their success."
   },
   {
     amharic: "ከአንድ ከፍታ ወደ ሌላ የላቀ ደረጃ ለመድረስ አንዳንዴ ታች ወርዶ ድጋሚ መውጣትን ሊጠይቅ ይችላል። ወደ ታች የምንወርደው ስለተሸነፍን ሳይሆን፣ ወደ ላይ በበለጠ ኃይል ለመንደርደር ትልቅ ጉልበት ለማግኘት ነው!\n\nኃይላችንን ሰብስበን ወደ አዲሱ ከፍታችን እንወጣለን። እንበርታ! 💪✨",
     english: "To reach a higher level from one peak, it sometimes requires going down and climbing again. We go down not because we are defeated, but to gather great strength to propel ourselves upwards with more power!\n\nWe will gather our strength and rise to our new heights. Let us be strong! 💪✨",
-  ,
     categories: ["Success","Perseverance","Courage"],
     meaning: "Setbacks are often necessary to gather the strength required to reach even greater heights."
   },
@@ -112,7 +104,6 @@ export const proverbs: Proverb[] = [
     amharic: "ሰዎች የተናገርከውን ሊረሱ ይችላሉ፤ ያደረግከውንም ሊረሱ ይችላሉ። ነገር ግን እንዲሰማቸው ያደረግከውን ስሜት መቼም አይረሱትም።",
     english: "People will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
     attribution: "ማያ አንጀሉ (Maya Angelou)",
-  ,
     categories: ["Relationships","Human Nature"],
     meaning: "How you treat people and the emotions you evoke in them leave the most lasting impression."
   },
@@ -131,7 +122,6 @@ export const proverbs: Proverb[] = [
       "",
       "Let us not seek only what is common and easy; instead, let us shine the light of diligence upon the darkness of inability! To make the weak strong,"
     ].join("\n"),
-  ,
     categories: ["Work","Courage","Perseverance"],
     meaning: "True fulfillment comes from taking on difficult challenges and improving things that seem impossible."
   },
@@ -154,106 +144,91 @@ export const proverbs: Proverb[] = [
       "",
       "'I am the lord of this land, a king with an army of thousands. But you work here bent over in the dust. Why...'"
     ].join("\n"),
-  ,
     categories: ["Wisdom","Human Nature","Life"],
     meaning: "True glory is often found in humble, honest work rather than in titles or conquests."
   },
   {
     amharic: "ዛሬህን በጥራት ከኖርክ፣ ትላንትህ ትርጉም ያለው ትዝታ ይሆናል፤ ነገህ ደግሞ በራስ መተማመን የምትቀበለው ስጦታ ይሆናል። ትኩረትህን አሁን በምትሠራው ሥራና አብረውህ ባሉ ሰዎች ላይ አድርግ።",
-    english: "If you live today with quality, your yesterday will be a meaningful memory; and your tomorrow will be a gift you receive with confidence. Focus on the work you are doing now and the people who are with you."
-  ,
+    english: "If you live today with quality, your yesterday will be a meaningful memory; and your tomorrow will be a gift you receive with confidence. Focus on the work you are doing now and the people who are with you.",
     categories: ["Life","Advice"],
     meaning: "Focusing on doing your best right now ensures a happy past and a confident future."
   },
   {
     amharic: "ሕይወት ማለት የምትፈልገውን ሁሉ ማግኘት ሳይሆን፣ ባገኘኸው ነገር ውስጥ ትርጉም ያለው ማንነት መገንባት ነው።",
-    english: "Life is not about getting everything you want, but building a meaningful identity within what you have."
-  ,
+    english: "Life is not about getting everything you want, but building a meaningful identity within what you have.",
     categories: ["Life","Wisdom"],
     meaning: "True meaning comes from the person you become through your experiences, not the things you acquire."
   },
   {
     amharic: "ለካ የሰው ልጅ ሞራል ከሌለው መማር አይለውጠውም፣ እምነት አይገራውም፣ መርህ አይመራውም፣ ፍቅር አይገዛውም። ለማንኛውም የምንራብለት፣ የምንሰደድለት፣ የምንቆምለት፣ የምንኖርለት፣ የምንሞትለት ከስማችን እኩል የምንጠራበት፣ የማንደራደርበት የሞራልና የስነምግባር አቋም እንያዝ።",
-    english: "It turns out that if a human being has no morals, learning will not change them, faith will not tame them, principles will not guide them, and love will not rule them. Let us hold a moral and ethical stance that we starve for, are exiled for, stand for, live for, and die for—a stance by which we are called as equally as our name, and on which we do not compromise."
-  ,
+    english: "It turns out that if a human being has no morals, learning will not change them, faith will not tame them, principles will not guide them, and love will not rule them. Let us hold a moral and ethical stance that we starve for, are exiled for, stand for, live for, and die for—a stance by which we are called as equally as our name, and on which we do not compromise.",
     categories: ["Honesty","Responsibility","Human Nature"],
     meaning: "Education and skills are useless without a strong foundation of ethics and moral principles."
   },
   {
     amharic: "ዓለም መንገድ ባይኖራትም፣ ሰዎች ዕድል ባይሰጡህም፣ አንተ የራስህን አዲስ መንገድ በመፈለግ አዲሱን የተለወጠ አንተነትህን ከህልመኞች፣ ከባለራዕዮች እና ከስኬታማ ሰዎች ተርታ አግኘው። እመኑኝ፤ ሁሉም መንገድ ሲዘጋ እውነተኛ ጀግና አዲስ መንገድ ይፈጥራል።",
-    english: "Even if the world has no path, and even if people do not give you a chance, you must find your own new path and discover your new, transformed self among dreamers, visionaries, and successful people. Believe me; when all paths are closed, a true hero creates a new path."
-  ,
+    english: "Even if the world has no path, and even if people do not give you a chance, you must find your own new path and discover your new, transformed self among dreamers, visionaries, and successful people. Believe me; when all paths are closed, a true hero creates a new path.",
     categories: ["Courage","Perseverance","Success"],
     meaning: "When faced with closed doors, true innovators and heroes carve out their own unique paths."
   },
   {
     amharic: "አበው ሲናገሩ \"ፈጣሪ ለሚሮጥ ሰው ፈረስ ይሰጠዋል፤ ለሚተኛ ጋቢ ይደርብለታል\" ይላሉ። ታገሉና አሸንፉ።",
-    english: "As the elders say, 'The Creator gives a horse to the one who runs, and covers with a blanket the one who sleeps.' Struggle and win."
-  ,
+    english: "As the elders say, 'The Creator gives a horse to the one who runs, and covers with a blanket the one who sleeps.' Struggle and win.",
     categories: ["Work","Success"],
     meaning: "Hard work and active effort attract divine help and favorable opportunities."
   },
   {
     amharic: "ማንም ሰው ራሱ ላይ መስራት ከፈለገ የዚህን ሰው ስልጠናዎችና የመጽሀፍ ዳሰሳዎች ይከታተል። ሰው በቦታው ሲገኝ እንዲህ ነፍስን የሚያክም፣ ውስጥን የሚፈውስ የዕውቀትና የጥበብ ምንጭ ይሆናል።",
-    english: "If anyone wants to work on themselves, they should follow this person's trainings and book reviews. When a person is in their rightful place, they become a source of knowledge and wisdom that heals the soul and cures from within."
-  ,
+    english: "If anyone wants to work on themselves, they should follow this person's trainings and book reviews. When a person is in their rightful place, they become a source of knowledge and wisdom that heals the soul and cures from within.",
     categories: ["Education","Advice"],
     meaning: "Seeking guidance from knowledgeable mentors can provide profound personal healing and growth."
   },
   {
     amharic: "የሰው ልጅ እውነተኛ መልኩ ባልንጀራውን እንደራስ በመውደድ እና በሱ ላይ ሊሆን የማይፈልገውን በሌሎች ላይ ባለማድረግ ላይ የተመሰረተ ነው። ይህ ወርቃማው የህይወት ህግ ነው።",
-    english: "The true nature of a human being is based on loving their neighbor as themselves and not doing to others what they would not want done to themselves. This is the golden rule of life."
-  ,
+    english: "The true nature of a human being is based on loving their neighbor as themselves and not doing to others what they would not want done to themselves. This is the golden rule of life.",
     categories: ["Human Nature","Love","Community"],
     meaning: "The core of a good human life is treating others with the same love and respect we desire for ourselves."
   },
   {
     amharic: "ተወደደም፣ተጠላም የህይወት እርካታ የሚገኘው አምላክ ላይ ባለን የምስጋና መጠን ነው። ዘመኑ የእግዚአብሔር እንጂ የክፉዎች ስላይደለ፤ በበጎ ስራ እንዋጀው ዘንድ አዲስ ዓመት ተሰጠኝ። ተመስገን።",
-    english: "Like it or not, true life satisfaction is found in the measure of our gratitude towards God. Because the times belong to God and not to the wicked, a new year was given to us to redeem with good deeds. Thank God."
-  ,
+    english: "Like it or not, true life satisfaction is found in the measure of our gratitude towards God. Because the times belong to God and not to the wicked, a new year was given to us to redeem with good deeds. Thank God.",
     categories: ["Wisdom","Life"],
     meaning: "True fulfillment and happiness stem from an attitude of deep gratitude for what we are given."
   },
   {
     amharic: "ሁሉም ሰው ህይወትን የሚያየው ከራሱ አንግል ነው። መስማት የሚፈልገው የመሻቱን ማረጋገጫ ነው። አንተ ግን እውነትህን ለማሳመን አትታገል፤ ለጊዜ ተውለት።",
-    english: "Everyone sees life from their own angle. What they want to hear is the validation of their own desires. But you, do not struggle to convince them of your truth; leave it to time."
-  ,
+    english: "Everyone sees life from their own angle. What they want to hear is the validation of their own desires. But you, do not struggle to convince them of your truth; leave it to time.",
     categories: ["Human Nature","Relationships"],
     meaning: "People often seek validation for their own views; sometimes it's best to let time reveal the truth."
   },
   {
     amharic: "ማንኛውም ሰው ያለፈው ሕይወቱ ምንም ይሁን ምን ሁሉንም ነገር እንደ አዲስ ለመጀመር ጊዜው አይረፍድም።",
-    english: "For anyone, no matter what their past was like, it is never too late to start everything anew."
-  ,
+    english: "For anyone, no matter what their past was like, it is never too late to start everything anew.",
     categories: ["Life","Courage","Advice"],
     meaning: "No matter your history, you always have the power to begin again and change your future."
   },
   {
     amharic: "መኖር እና መሞት የሰው ልጅ አይቀሬ እጣፈንታ ቢሆንም አላማ ያላቸው ሰዎች መኖራቸውን የሚያረጋግጡት በእስትንፋሳቸው ሳይሆን ለማህበረሰቡ በሚያበረክቱት የመልካም ስራ ውጤት ነው።",
     english: "Although living and dying are the inevitable fate of human beings, people with purpose prove their existence not by their breath, but by the results of the good work they contribute to society.",
-    attribution: "ከቡስካ በስተጀርባ (ፍቅረማርቆስ ደስታ)"
-  ,
+    attribution: "ከቡስካ በስተጀርባ (ፍቅረማርቆስ ደስታ)",
     categories: ["Life","Responsibility","Community"],
     meaning: "Our true existence is measured by the positive impact and legacy we leave behind in society."
   },
   {
     amharic: "ይህ ሞት ከመኖር ባሻገር ገዝፎ የቆመ የመልካም ስብዕና ሀውልት፣ በትህትና የተኖረ መንፈሳዊነት፣ የእምነት ድንበርን የተሻገረ አባትነት፣ የጥበብ፣የስክነትና የሽምግልና ምልክት እንጂ በመቃብር ተዘግቶ የሚያከትም መለየት አይደለም።",
-    english: "This death is a monument of good character standing tall beyond life, a spirituality lived in humility, a fatherhood that crossed the boundaries of faith, a symbol of wisdom, sobriety, and eldership, rather than a separation that ends sealed in a tomb."
-  ,
+    english: "This death is a monument of good character standing tall beyond life, a spirituality lived in humility, a fatherhood that crossed the boundaries of faith, a symbol of wisdom, sobriety, and eldership, rather than a separation that ends sealed in a tomb.",
     categories: ["Wisdom","Respect"],
     meaning: "A life lived with great humility, wisdom, and love stands as a monument that death cannot erase."
   },
   {
     amharic: "መልካም መስራትን የሚያህል ጤንነት፣ መስጠትን ያህል እርካታ፣ መተውን የመሰለ እረፍት የለም።",
-    english: "There is no health like doing good, no satisfaction like giving, and no rest like letting go."
-  ,
+    english: "There is no health like doing good, no satisfaction like giving, and no rest like letting go.",
     categories: ["Life","Wisdom"],
     meaning: "The greatest well-being and inner peace come from generosity, doing good, and learning to let go."
   },
   {
     amharic: "አርቆ እንደማየት፣ አይቶ እንደመራመድ፣ ለክቶ እንደመቁረጥ፣ መርጦ እንደመናገር፣ ታግሶ እንደመኖር መልካም ነገር የለም!",
-    english: "There is nothing as good as seeing far, walking with vision, cutting after measuring, speaking after choosing one's words, and living with patience!"
-  ,
+    english: "There is nothing as good as seeing far, walking with vision, cutting after measuring, speaking after choosing one's words, and living with patience!",
     categories: ["Wisdom","Patience"],
     meaning: "Careful planning, foresight, and patience are the best tools for making good decisions."
   },
@@ -269,34 +244,29 @@ export const proverbs: Proverb[] = [
       "Saying 'Unlike today, I used to be a reader, I used to be a person of prayer, I used to be effective...' carries the regret of one who has abandoned their path and lost their spiritual satisfaction.",
       "Saying 'I used to be an addict, I used to be corrupt, I used to be in darkness...' means one is now enjoying the freedom, spiritual satisfaction, and victorious feeling of being separated from that past.",
       "May the light of your 'I used to be' shine, and may your clear, true identity be revealed to you."
-    ].join("\n\n")
-  ,
+    ].join("\n\n"),
     categories: ["Life","Human Nature"],
     meaning: "Our past can be a source of regret for lost virtues, or a source of relief for overcoming bad habits."
   },
   {
     amharic: "\"Some of you are Near to Church, but Far from God\". አንዳንዶቻችሁ ለቤተ ክርስትያኑ ቅርብ ለእግዚአብሔር ግን ሩቅ ናችሁ። የፈረሰው ቃልኪዳናችን፣ የተዛባው ማንነታችን፣ የተዛነፈው ስብዕናችን፣ ከቃላችን የተላለፈ ተግባራችን፣ ከባህላችን ያፈነገጠው ራስወዳድነታችን እንዳንግባባና እንዳንተማመን አድርጎናል ብዬ አስባለሁ። ወርቅ ቅብ ከመምሰል፤ ወርቅ ለመሆን መቅረብን እንጀምር።",
-    english: "\"Some of you are Near to Church, but Far from God\". I believe our broken covenants, our distorted identities, our skewed personalities, our actions that contradict our words, and our selfishness that deviates from our culture have made us unable to communicate and trust one another. Rather than appearing gold-plated, let us start getting closer to being real gold."
-  ,
+    english: "\"Some of you are Near to Church, but Far from God\". I believe our broken covenants, our distorted identities, our skewed personalities, our actions that contradict our words, and our selfishness that deviates from our culture have made us unable to communicate and trust one another. Rather than appearing gold-plated, let us start getting closer to being real gold.",
     categories: ["Honesty","Responsibility"],
     meaning: "True faith is about internal transformation and honesty, not just outward religious appearances."
   },
   {
     amharic: "ብሩህ ዘመን እንዲሆንልን እመኛለሁ። ተዋጊያችን እርሱ እግዚአብሔር በነገሮች ሁሉ ቀድሞ ይታገልልን።",
-    english: "I wish for us to have a bright era. May our fighter, God Himself, go before us and fight for us in all things."
-  ,
+    english: "I wish for us to have a bright era. May our fighter, God Himself, go before us and fight for us in all things.",
     categories: ["Life","Wisdom"],
     meaning: "A hopeful wish that divine guidance will fight our battles and lead us into a brighter future."
   },
   {
     amharic: "ቀጣዩ የህይወት ምዕራፍ (The Next Chapter of Life)\n\nየዕውቀት የመጨረሻው ግብ መስጠት ነው ብዬ አምናለሁ፡፡ ቀጣዩ የህይወት ምዕራፍ ትኩረት ሰዎች እንቁ ማንነታቸውን አውጥተው ደስተኛ ስኬታማ ህይወት እንዲኖሩ ማገዝ ፣ማሰልጠን እና ማብቃት።",
-  ,
     categories: ["Education","Leadership"],
     meaning: "The ultimate purpose of acquiring knowledge is to share it and empower others to succeed."
   },
   {
     amharic: "እውነተኛ የሕይወት ጥበብ (The True Wisdom of Life)\n\nበዚህ በፈጣን የቴክኖሎጂና የውድድር ዘመን ውስጥ፣ ብዙዎቻችን ሩጫ እንጂ ጉዞ፣ ጫጫታ እንጂ መረጃ፣ መኖር እንጂ ሕይወት እየጠፋብን እንገኛለን። እውነተኛ የሕይወት ጥበብ ደግሞ የሚገኘው ከሩጫው በስተጀርባ ባለው መረጋጋትና ነገሮችን ከጥልቀታቸው መረዳት ሲቻል ነው። የነጠረ የሕይወት ጥበብ ማለት ብዙ ተምሮ ብዙ ማወቅ ብቻ ሳይሆን፣ ጥቂት የታወቁ እውነቶችን በተግባር መኖር መቻል ነው።",
-  ,
     categories: ["Wisdom","Life"],
     meaning: "True wisdom is found in understanding things deeply and applying a few core truths in practice."
   },
@@ -310,13 +280,11 @@ export const proverbs: Proverb[] = [
       "",
       "በመጨረሻም፣ በተደጋጋሚ ለተሰሙትና ለተከሰቱት የአርሲ አካባቢ የሰዎች ሕይወት መጥፋት አስቸኳይና ዘላቂ የሆነ መፍትሔ ይፈለግ ዘንድ ልባዊ መሻቴ ነው፡፡"
     ].join("\n"),
-  ,
     categories: ["Community","Human Nature","Respect"],
     meaning: "We must respect the dignity of every human life, put an end to senseless violence, and inherit a legacy of pure humanity."
   },
   {
     amharic: "ስኬት እና ቁርጠኝነት (Success and Commitment)\n\nስኬት የሚጀምረው በውሳኔ ነው፤ ዳር የሚደርሰው ግን በቁርጠኝነት ነው። ምንም ዓይነት ስኬት ያለ መስዋዕትነት አይገኝም። ቁርጠኛ ሰው ለዓላማው ሲል ጊዜውን፣ ጉልበቱንና ጊዜያዊ ምቾቶቹን ለመተው ዝግጁ ነው። አንድ አትሌት ለድል የሚበቃው ጠዋት ብርድ እየመታው ለመለማመድ ባለው ቁርጠኝነት እንጂ ስላሸነፈ ብቻ አይደለም። እመኑኝ አንድን ነገር ለመጀመር መነሳሳት (Motivation) ሊኖረን ይችላል፤ ነገር ግን ያ መነሳሳት ሲቀዘቅዝ፣ ድካም ሲሰማንና መሰላቸት ሲመጣ እንድንቀጥል የሚያደርገን ቁርጠኝነት ብቻ ነው።",
-  ,
     categories: ["Success","Perseverance"],
     meaning: "Motivation may start a journey, but only strong commitment and a willingness to sacrifice will bring true success."
   },
@@ -332,7 +300,6 @@ export const proverbs: Proverb[] = [
       "",
       "እነሆ የሚወድህ እንዲህ ተማፅኖሀል፤ ኤሎኼ ላማ ሰበቅታኒ! አቤቱ አትተወኝ!!!!!!!!"
     ].join("\n"),
-  ,
     categories: ["Love","Friendship"],
     meaning: "The purest form of love and friendship is selfless sacrifice, exemplified by unconditional divine love."
   },
@@ -348,7 +315,6 @@ export const proverbs: Proverb[] = [
       "",
       "ይህን የመሰለው ህይወት ያለኝ ይበቃኛል ማለትን፣ የአገልጋይነት መንፈስን፣ ለህሊና መገዛትን፣ ለእውነት መታመንን፣ ከተገፉት ጎን መቆምን ይጠይቃል። እንዲህ በማድርግ መኖር እጅግ ደስ ይላል። ለሁሉም ግን መኖር ደስ ይላል።"
     ].join("\n"),
-  ,
     categories: ["Life","Community"],
     meaning: "Life is most joyful when we serve others, lift up the fallen, and become a reason for their happiness."
   },
@@ -368,7 +334,6 @@ export const proverbs: Proverb[] = [
       "",
       "ተፈጥሮ ውበትን ያደለሽ፣ የቅን ህዝቦች መኖሪያ፣ የማትሰለቺኝ የእረፍቴ ወደብ፣ ልለይሽ የማይቻለኝ የመማፀኛ ከተማዬ፣ በንፁህ ልቤ አቅሜ በፈቀደው ሁሉ ለከፍታሽ ልተጋ ቃል እገባለሁ።"
     ].join("\n"),
-  ,
     categories: ["Community","Responsibility"],
     meaning: "Loving our city means actively participating in its development and ensuring it remains a place of peace and progress."
   },
@@ -382,7 +347,6 @@ export const proverbs: Proverb[] = [
       "",
       "ለዚህ ነው ኦርቶዶክስን የምንከተለው፣ ለዚህ ነው የምንፀናው፣ ለዚህ ስም ነው የምንነቀፈው፣ ለዚህ ስም ነው ዕለት ዕለት የምንገደለው፣ ይህንን ስም ነው የምንሰብከው፤ ይህንን ስም ነው የተቀበልነው። አዎ ኢየሱስ ጌታ ነው ። አዎ ኢየሱስ አዳኝ ነው። አዎ በአብ ቀኝ የተቀመጠው ፈራጅ ዳኛ፣ የይሁዳ አንበሳ፣ የድንግል ማርያም ልጅ ኢየሱስ ክርስቶስ የዓለም መድኃኒት ነው።"
     ].join("\n"),
-  ,
     categories: ["Wisdom","Love"],
     meaning: "Faith should be rooted in deep love, humility, and brotherhood, rather than serving as a reason for conflict and boasting."
   },
@@ -397,7 +361,6 @@ export const proverbs: Proverb[] = [
       "ምስክርነት ፡- ምን ማድረግ አለብህ?",
       "ትኩረትህን ቀይር፦ ጊዜህን በባዶ “ሞቲቬሽን” እና ተግባር በሌላቸው ቪዲዮዎች ላይ ከማባከን ይልቅ፣ ትምህርትን ከተግባርና ከውጤት ጋር ከሚያስተምሩ ሰዎች ጋር ተጣበቅ። የሚያዋጣው እሱ ብቻ ነው!"
     ].join("\n"),
-  ,
     categories: ["Education","Responsibility"],
     meaning: "Achieving financial freedom requires not just the ability to make money, but the discipline to manage and multiply it wisely."
   },
@@ -409,7 +372,6 @@ export const proverbs: Proverb[] = [
       "",
       "Manual አንብቦ የማይረዳ፣ የመድሀኒት precautions አንብቦ የማይጠነቀቅ፣ online ማመልከት ያልቻለ፣ የባንክ ስሊፕ መሙላት ግራ የሚያጋባው፣ map reading ተጠቅሞ ከቦታ ቦታ የማይንቀሳቀስ፣ ቴሌ የሚልከውን የቢል ቴክስት የማይረዳ ፣ ወዘተ ቤት ይቁጠረው።"
     ].join("\n"),
-  ,
     categories: ["Education","Human Nature"],
     meaning: "Possessing basic skills without the ability to practically apply them is a silent killer of progress and innovation."
   },
@@ -423,7 +385,6 @@ export const proverbs: Proverb[] = [
       "",
       "ማንቃት፣ መደገፍ፣ ማስቻል!!!!!!!!"
     ].join("\n"),
-  ,
     categories: ["Education","Success","Leadership"],
     meaning: "To solve deeply rooted problems, we must undergo a mindset revolution, shifting from learned helplessness to active self-empowerment."
   },
@@ -441,7 +402,6 @@ export const proverbs: Proverb[] = [
       "",
       "መልካም በአል"
     ].join("\n"),
-  ,
     categories: ["Humility","Love","Community"],
     meaning: "True greatness often starts from the humblest beginnings, and we should honor this by showing compassion and kindness to the marginalized."
   },
@@ -455,58 +415,50 @@ export const proverbs: Proverb[] = [
       "May the grace of dawn visit you.",
       "",
       "Dawn represents a new day and a new opportunity. It is a new starting point and a new beginning. The natural beauty and rest of dawn – brings with it a gradual transition from darkness to light. May the new era that has begun with the good news of victory visit you with the grace of dawn."
-    ].join("\n")
-  ,
+    ].join("\n"),
     categories: ["Life","Wisdom"],
     meaning: "Every new dawn is a beautiful opportunity for a fresh start and a transition from darkness into light."
   },
   {
     amharic: "ወጥነት ዓላማችንን ለማሳካት፣ ግባችንን ለመምታት፣ ህልማችንን እውን ለማድረግና ካሰብንበት ለመድረስ የሚከፈል ዋጋ፣ በመርህ የመጓዝና ዲሲፕሊን መር ህይወት ለመምራት የሚያስፈልገን ሀይል ነው ። ጀምረን የተውናቸው፣ ሞክረን ያቋረጥናቸው፣ መፅናት አቅቶን የሰረዝናቸው በርካታ ቢዝነሶች፣ ግንኙነቶችና ስምምነቶች እልፍ ናቸው። ባለመጨረሳችን ፣ ባለመቀጠላችን፣ ባለመፅናታችን ያጣነውን፣ የቀረብንን፣ ያመለጠንን እድል እየቆጠርን በቁጭት ከመብከንከን በቀጣይስ ላመንንበትና መድረሻውን ላወቅንበት ጉዳይ የሚያስፈልገንን የወጥነት ዲሲፕሊንና ሀይል እናዳብር።",
-    english: "Consistency is the price we pay to achieve our purpose, hit our target, make our dream a reality, and arrive at our destination; it is the power we need to walk on principle and lead a discipline-led life. The businesses, relationships, and agreements we started and abandoned, tried and stopped, or cancelled because we lacked perseverance are countless. Instead of agonizing in regret counting the opportunities we missed, lacked, or let slip away because we did not finish, did not continue, and did not persevere, let us develop the discipline and power of consistency we need for the cause we believe in and whose destination we know."
-  ,
+    english: "Consistency is the price we pay to achieve our purpose, hit our target, make our dream a reality, and arrive at our destination; it is the power we need to walk on principle and lead a discipline-led life. The businesses, relationships, and agreements we started and abandoned, tried and stopped, or cancelled because we lacked perseverance are countless. Instead of agonizing in regret counting the opportunities we missed, lacked, or let slip away because we did not finish, did not continue, and did not persevere, let us develop the discipline and power of consistency we need for the cause we believe in and whose destination we know.",
     categories: ["Perseverance","Success","Responsibility"],
     meaning: "Consistency and discipline are the essential forces required to see our goals through to the very end."
   },
   {
     amharic: "ከጅማሬያችሁ በላይ ፍፃሜያችሁን፣ ከመነሻችሁም በላይ መውደቂያችሁን ያመቻችላችሁ ዘንድ ፈጣሪን ሰው ስጠኝ ብላችሁ ጠይቁት። በሰው ጉዳታችሁን ያክመዋል፤ በሰው ያሳርፋችኋል፤ በሰው ሰላምን ያድላችኋል፤ በመረጠላችሁ ሰው በኩል ዳግም አንፆ ቀና ያደርጋችኋል። ህመማችሁን የሚመለከት፣ ድካማችሁ የሚገባው፣ ትጋታችሁ ጥግ መድረሱን የሚያውቅ፣ ቁስላችሁ እንዲሽር የሚፈልግ፣ የዓመታት ጠባሳችሁን መሻር የሚሻ ሰው ይስጣችሁ።",
-    english: "Ask the Creator to give you a person who will prepare your end better than your beginning, and your landing better than your starting point. Through a person, He heals your wounds; through a person, He gives you rest; through a person, He grants you peace; and through the person He chose for you, He rebuilds and lifts you up again. May He give you a person who sees your pain, understands your exhaustion, knows that your diligence has reached its limit, wants your wounds to heal, and desires to erase the scars of your years."
-  ,
+    english: "Ask the Creator to give you a person who will prepare your end better than your beginning, and your landing better than your starting point. Through a person, He heals your wounds; through a person, He gives you rest; through a person, He grants you peace; and through the person He chose for you, He rebuilds and lifts you up again. May He give you a person who sees your pain, understands your exhaustion, knows that your diligence has reached its limit, wants your wounds to heal, and desires to erase the scars of your years.",
     categories: ["Relationships","Friendship","Love"],
     meaning: "A truly valuable partner or friend is one who heals your wounds, understands your struggles, and helps you finish strong."
   },
   {
     amharic: "ሁሉም ሰው ያስባል፤ ጊዜ ሰጥቶ፣ ቦታ መርጦ ስለማሰብ የሚያስብ ግን ጥቂት ነው።",
-    english: "Everyone thinks; but few are those who take the time, choose a place, and intentionally think about thinking."
-  ,
+    english: "Everyone thinks; but few are those who take the time, choose a place, and intentionally think about thinking.",
     categories: ["Wisdom","Education"],
     meaning: "Intentional, focused thinking is a rare and highly valuable skill."
   },
   {
     amharic: "የአብዛኞቻችን ችግር በተግሳፅ፣ በውይይት፣ በሰላ ሒስ ተመክረን ከመታረምና ከመበርታት ይልቅ፥በአድናቅት መዶሻ መፈራረስን መምረጣችን ነው።",
-    english: "The problem with most of us is that, rather than being guided to correction and strength through discipline, dialogue, and sharp critique, we choose to be destroyed by the hammer of flattery."
-  ,
+    english: "The problem with most of us is that, rather than being guided to correction and strength through discipline, dialogue, and sharp critique, we choose to be destroyed by the hammer of flattery.",
     categories: ["Human Nature","Wisdom"],
     meaning: "Many people prefer the comfortable harm of flattery over the constructive benefit of honest criticism."
   },
   {
     amharic: "አንዳንድ ሰዎች በፈጣሪ ላይ ካላቸው እምነት ይልቅ፤ በሰይጣን ላይ ያላቸው ፍርሃት ይበረታል።",
-    english: "For some people, their fear of Satan is stronger than their faith in the Creator."
-  ,
+    english: "For some people, their fear of Satan is stronger than their faith in the Creator.",
     categories: ["Human Nature","Wisdom"],
     meaning: "Some people are driven more by their fears of evil than by their trust in what is good."
   },
   {
     amharic: "“መስቀለኛ መንገድ ላይ ደረስኩ፣ መሄድ የምችለው በአንዱ መንገድ ላይ ብቻ ነው፡፡ ቆም ብዬ አሰብኩና ብዙ ሰዎች ያልሄዱበትን መንገድ መረጥኩ፡፡ የታሪኬ ታላቅ ነገር የጀመረው ያን ጊዜ ነበር”",
     english: "“I arrived at a crossroads, and I could only travel on one path. I paused and thought, and I chose the path less traveled by many. That was when the great part of my story began.”",
-    attribution: "ሮበርት ፍሮስት (Robert Frost)"
-  ,
+    attribution: "ሮበርት ፍሮስት (Robert Frost)",
     categories: ["Courage","Life"],
     meaning: "Choosing to follow a unique, less popular path often leads to the most significant life adventures."
   },
   {
     amharic: "አንዳንድ ጊዜ በረከት ይዘው የሚመጡት ራሳቸው ችግሮች ናቸው፡፡ እውነተኛ የችግራችሁ መፍትሄ ደግሞ መፈለግን፣ መጠየቅን፣ እና ማንኳኳትን ይፈልጋል። መከራን የተሻገሩ፤ ችግርን ያሸነፉት ያለማቋረጥ ያንኳኩት ናቸው። ይህ ነው የመለወጫው መንገድ።",
-    english: "Sometimes, problems themselves are the ones that bring blessings. And the true solution to your problem requires seeking, asking, and knocking. Those who have crossed hardships and defeated problems are those who knocked continuously. This is the path of transformation."
-  ,
+    english: "Sometimes, problems themselves are the ones that bring blessings. And the true solution to your problem requires seeking, asking, and knocking. Those who have crossed hardships and defeated problems are those who knocked continuously. This is the path of transformation.",
     categories: ["Perseverance","Success","Wisdom"],
     meaning: "Hardships often carry hidden blessings, and those who persistently seek solutions will eventually find them."
   },
@@ -525,8 +477,7 @@ export const proverbs: Proverb[] = [
       "",
       "Write your own new story. The old has passed."
     ].join("\n"),
-    attribution: "እጓለ ገ/ዮሀንስ (የከፍተኛ ትምህርት ዘይቤ)"
-  ,
+    attribution: "እጓለ ገ/ዮሀንስ (የከፍተኛ ትምህርት ዘይቤ)",
     categories: ["Honesty","Life"],
     meaning: "The best way to expose a flaw is not to argue against it, but to build something new and undeniably better next to it."
   },
@@ -540,29 +491,25 @@ export const proverbs: Proverb[] = [
       "Let us take revenge on those who, at a time when life made them capable and powerful while we were needy and lacking, saw us and passed by when they could have helped; those who withheld their hands from helping us when a matter that felt as heavy to us as pushing a mountain or carrying a boulder was as easy for them as throwing a pebble; those who, even if they couldn't help, couldn't at least refrain from being an obstacle.",
       "",
       "When our turn comes, let us not delay people or make them wait at our door for even a fraction of a second. To the extent that they fell short—and if possible, even more—let us be a complete presence wherever we are needed. There is no greater revenge than being what they couldn't be for us. Let us take revenge by being better."
-    ].join("\n")
-  ,
+    ].join("\n"),
     categories: ["Relationships","Human Nature","Success"],
     meaning: "The greatest revenge against those who failed you is to become a better, more helpful person yourself."
   },
   {
     amharic: "ነጋችንን የሚገል ጉዳይ ዛሬውኑ ይሙት!",
-    english: "Let whatever kills our tomorrow die today!"
-  ,
+    english: "Let whatever kills our tomorrow die today!",
     categories: ["Courage","Life"],
     meaning: "We must aggressively eliminate anything in our present that threatens our future success and well-being."
   },
   {
     amharic: "አንዳንድ ሰዎች እንደማስነጠስ ናቸው ከህይወትህ ሲወጡ ደስ ሊልህ ይገባል።",
-    english: "Some people are like a sneeze; you should be glad when they leave your life."
-  ,
+    english: "Some people are like a sneeze; you should be glad when they leave your life.",
     categories: ["Relationships","Human Nature"],
     meaning: "It is healthy and relieving to let go of toxic people from your life."
   },
   {
     amharic: "የመድመቃችንን መጠን የምንለካው በሌሎች የመደብዘዝ መጠን አይሁን።",
-    english: "Let the measure of our brightness not be the extent to which others fade."
-  ,
+    english: "Let the measure of our brightness not be the extent to which others fade.",
     categories: ["Relationships","Respect","Community"],
     meaning: "We should shine based on our own merits, not by dimming the light or success of those around us."
   },
@@ -580,8 +527,7 @@ export const proverbs: Proverb[] = [
       "If you start but don't finish, if you plan but don't execute, if you wish but don't attain, if you walk but don't arrive, if you fall in love but don't marry, if you laugh but aren't happy, pay attention. There is a huge gap between starting and finishing. Seeming and being are not the same. You become what you envision and you get what you wish for based on your alignment, mindset, conduct, and actions in between. If your mental structure is corrupted, if you lack a good vision, if your thinking isn't enlightened, your perspective might turn a flat field into a cliff, and a bridge into an obstacle.",
       "",
       "Build a mindset that can help you finish what you start. You cannot grow your business without growing your attitude. You cannot build a strong personality without elevating your conscience and strengthening your mindset. Your life becomes beautiful when you walk with a capable mind and a positive attitude. The central pillar of your identity is your conscience. If you become materially rich without enriching your spirit, the profit is merely a name, but it will not bring you heartfelt joy and spiritual satisfaction."
-    ].join("\n")
-  ,
+    ].join("\n"),
     categories: ["Success","Perseverance","Wisdom"],
     meaning: "Starting is not enough; you must build a strong mindset and resilient character to actually finish what you start."
   },
@@ -593,29 +539,25 @@ export const proverbs: Proverb[] = [
     english: [
       "Life doesn’t reward permission-seekers.",
       "It rewards action-takers."
-    ].join("\n")
-  ,
+    ].join("\n"),
     categories: ["Courage","Work","Success"],
     meaning: "Bold action, rather than waiting for someone else's approval, is what leads to real success in life."
   },
   {
     amharic: "ሰው ሆነን ስንኖር ቤተሰቦቻችን የሚታዘዙለት፣ ወዳጆቻችን የሚያከብሩልን፣ ጎረቤቶቻችን የሚያውቁልን፣ የስራ ባልደረባዎቻችን የሚከተሉልን የህይወት መርህ፤ የቆምንለት ራዕይ፣ የምንሞትለት ዓላማ ፣ የምናራምደው አቋም፣ የምንጠራበት መልካም ስም፣ የምንዘከርበት በጎ አሻራ በህይወት ገፃችን፣ በኑሮ ሰሌዳ ላይ ልንፅፍ ይገባናል። ይህን በማድረጋችን ኖረን የምንከበርበት፣ አልፈን የምንታወስበት፣ የመልካም ስራችን ሀውልት በሰዎች ልብ ውስጥ ቆሞ፣ በዓይነ ህሊና ተስሎ ፣ ለጆሮ እንደሚስማማ ጥዑም ዜማ ተቀርፆ እንዲቆይና እንደ መልካም ሽቶ የሚጣራ ስብዕና እንዲኖረን እንትጋ።",
-    english: "As we live as human beings, we must write on the pages of our lives and the board of our existence a life principle that our families obey, our friends respect, our neighbors recognize, and our colleagues follow; a vision we stand for, a purpose we would die for, a stance we promote, a good name by which we are called, and a good footprint by which we are remembered. By doing this, let us strive to have a personality that spreads like a good perfume, so that we are respected while alive, remembered when we pass, and the monument of our good deeds stands in people's hearts, painted in their mind's eye, and recorded as a sweet melody pleasing to the ear."
-  ,
+    english: "As we live as human beings, we must write on the pages of our lives and the board of our existence a life principle that our families obey, our friends respect, our neighbors recognize, and our colleagues follow; a vision we stand for, a purpose we would die for, a stance we promote, a good name by which we are called, and a good footprint by which we are remembered. By doing this, let us strive to have a personality that spreads like a good perfume, so that we are respected while alive, remembered when we pass, and the monument of our good deeds stands in people's hearts, painted in their mind's eye, and recorded as a sweet melody pleasing to the ear.",
     categories: ["Responsibility","Respect","Community"],
     meaning: "We must strive to live by strong principles so that we leave a positive, lasting legacy that commands respect."
   },
   {
     amharic: "ስለችግር ስታስብ ፣ ውድቀትና ሽንፈትን ወደ ህይወትህ ትጋብዛለህ፤ ስለመፍትሄው ስትሰራ በረከትን ታጭዳለህ፣ በምስጋና ትሞላለህ። ባርኩ፣ መርቁ፣ አመስግኑ።",
-    english: "When you think about the problem, you invite failure and defeat into your life; when you work on the solution, you reap blessings and are filled with gratitude. Bless, pray for others, and give thanks."
-  ,
+    english: "When you think about the problem, you invite failure and defeat into your life; when you work on the solution, you reap blessings and are filled with gratitude. Bless, pray for others, and give thanks.",
     categories: ["Wisdom","Success"],
     meaning: "Focusing on solutions brings gratitude and blessings, while dwelling on problems only attracts failure."
   },
   {
     amharic: "ሀሳብ ከሌላቸው፣ ከማያነቡ፣ ትህትና ከጎደላቸው፣ ትዕቢት ከሞላቸው፣ ክብር ከማይሰጡ፣ ደስታ ከራቃቸው፣ ተስፋ ከሌላቸው ሰዎች ተጠበቁ።",
-    english: "Beware of people who have no ideas, who do not read, who lack humility, who are full of arrogance, who do not give respect, who are far from joy, and who have no hope."
-  ,
+    english: "Beware of people who have no ideas, who do not read, who lack humility, who are full of arrogance, who do not give respect, who are far from joy, and who have no hope.",
     categories: ["Advice","Relationships"],
     meaning: "Protect yourself by keeping a distance from arrogant, uninspired, and hopeless individuals."
   },
@@ -635,29 +577,25 @@ export const proverbs: Proverb[] = [
       "2. Compassion: The desire to save others from suffering and misery: They show in practice a firm desire or commitment to free both animals and human beings from distressing pain and problems.",
       "3. A sincere heart that is satisfied by and encourages the happiness of others: When they see others happy, they too become happy; when others perform good deeds or when their development efforts succeed, they rejoice from the heart and are ready to provide whatever help they can afford.",
       "4. Capable of seeing and accepting everyone equally: One who understands things with a far-sighted mind, a clean conscience free from discrimination! One who has a consistent and firm loving character towards others. If we were to measure ourselves on this scale, what do you think it would look like?"
-    ].join("\n")
-  ,
+    ].join("\n"),
     categories: ["Community","Responsibility","Respect"],
     meaning: "A truly valuable person serves society with love, compassion, sincerity, and equality towards all."
   },
   {
     amharic: "የማምነውን የቀራንዮ እውነት ከልቤ የሚፍቀው ማን ነው?",
-    english: "Who can erase the truth of Calvary that I believe in from my heart?"
-  ,
+    english: "Who can erase the truth of Calvary that I believe in from my heart?",
     categories: ["Courage","Life"],
     meaning: "A deep, true faith is so strongly rooted in the heart that nothing can erase or diminish it."
   },
   {
     amharic: "በፕላስተር ከተለጠፉት፣ ከተቀደዱት፣ ካረጁትና ከተዳደፉት ብሮች መሀል የተሻለ አዲስ የሆነውን መርጬ አንድ አረጋዊ አባት የተዘረጉ እጆች ላይ አሳረፍኩ። ስመርጥ አይተውኝ ስለነበር ላንተም የተሻለውን ይስጥህ አሉኝ። በትንሽ ልገሳ የእድሜ ልክ ትምህርት አገኘሁበት። ውስጥ ድረስ የዘለቀ ምርቃት አተረፍኩበት። ካላችሁ ነገር ላይ የተሻለ ስጡ፣ የተሻለ ተቀበሉ።",
-    english: "From among the torn, taped, old, and dirty bills, I chose the better, newer one and placed it in the outstretched hands of an elderly father. Because he saw me choosing, he said to me, 'May He give you the best as well.' Through a small donation, I gained a lifelong lesson. I earned a blessing that reached deep inside. Give the best of what you have, and receive the best."
-  ,
+    english: "From among the torn, taped, old, and dirty bills, I chose the better, newer one and placed it in the outstretched hands of an elderly father. Because he saw me choosing, he said to me, 'May He give you the best as well.' Through a small donation, I gained a lifelong lesson. I earned a blessing that reached deep inside. Give the best of what you have, and receive the best.",
     categories: ["Honesty","Love","Responsibility"],
     meaning: "Giving the best of what you have, even in small ways, attracts profound blessings and teaches lifelong lessons."
   },
   {
     amharic: "የታዋቂ ሰዎች ቤተ እምነት መቀያየር የወንጌል እውቀት መለኪያ አይደለም። ወንጌል በትህትናና በፍቅር የሚሰበክ የሚኖር እውነት እንጂ በእልህ፣ በፉክክርና በጉልበት የምንንጠራራበት የታይታ መድረክ አይመስለኝም። የኤማሁስ መንገደኞች ለሆናችሁ ትክክለኛው፣ እውነተኛውን ኢየሱስ ታዩት ዘንድ በልባችሁ ብርሀን ያብራላችሁ። ሁሉ በፍቅር ይሁን።",
-    english: "The changing of denominations by famous people is not a measure of gospel knowledge. The gospel is a living truth preached with humility and love, not a stage for showing off where we strive out of spite, rivalry, and force. For those of you who are travelers to Emmaus, may He shine a light in your hearts so that you may see the right and true Jesus. Let everything be done in love."
-  ,
+    english: "The changing of denominations by famous people is not a measure of gospel knowledge. The gospel is a living truth preached with humility and love, not a stage for showing off where we strive out of spite, rivalry, and force. For those of you who are travelers to Emmaus, may He shine a light in your hearts so that you may see the right and true Jesus. Let everything be done in love.",
     categories: ["Wisdom","Respect","Community"],
     meaning: "True faith is demonstrated through humility and love, not through pride, rivalry, or the actions of the famous."
   },

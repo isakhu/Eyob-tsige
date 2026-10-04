@@ -34,7 +34,18 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<DragState | null>(null);
 
-  const allCategories = Array.from(new Set(items.flatMap(i => i.categories || []))).sort();
+  const categoryCounts = items.reduce((acc, item) => {
+    (item.categories || []).forEach(cat => {
+      acc[cat] = (acc[cat] || 0) + 1;
+    });
+    return acc;
+  }, {} as Record<string, number>);
+
+  const allCategories = Object.entries(categoryCounts)
+    .sort((a, b) => b[1] - a[1]) // sort by frequency descending
+    .slice(0, 8)                 // take top 8
+    .map(entry => entry[0])      // extract category name
+    .sort();                     // sort alphabetically for display
 
   const filteredItems = items.filter(item => {
     if (selectedCategory && !(item.categories || []).includes(selectedCategory)) return false;

@@ -14,15 +14,25 @@ export default function Organizations() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Bookstore */}
           <div className="flex flex-col rounded-3xl overflow-hidden border border-black/5 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-transform hover:-translate-y-1">
-            <div className="h-64 grid grid-cols-2 gap-1 bg-[#F5F0E6]">
+            <div className="h-64 w-full bg-[#F5F0E6]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/books/bookstore1.png" alt="Eyob Tsige Bookstore" className="w-full h-full object-cover col-span-2 row-span-2" />
+              <img src="/images/books/bookstore1.png" alt="Eyob Tsige Bookstore" className="w-full h-full object-cover" />
             </div>
-            <div className="flex gap-1 h-32 mt-1">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/books/bookstore2.png" alt="Eyob Tsige Bookstore Interior" className="w-1/2 h-full object-cover" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/books/bookstore3.png" alt="Eyob Tsige Bookstore Detail" className="w-1/2 h-full object-cover" />
+            <div className="flex gap-1 h-32 mt-1 overflow-x-auto snap-x pb-1" style={{ scrollbarWidth: 'none' }}>
+              {[
+                "bookstore2.png", 
+                "bookstore3.png", 
+                "bookstore4.png", 
+                "bookstore5.png",
+                "bookstore6.jpg",
+                "bookstore7.jpg",
+                "bookstore8.png",
+                "bookstore9.png",
+                "bookstore10.png"
+              ].map((filename, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={i} src={`/images/books/${filename}`} alt={`Eyob Tsige Bookstore ${i + 2}`} className="w-[49.5%] md:w-[32.5%] h-full object-cover shrink-0 snap-start rounded-sm" />
+              ))}
             </div>
             <div className="p-8">
               <h3 className="text-2xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A]">Eyob Tsige Bookstore</h3>
@@ -49,6 +59,40 @@ export default function Organizations() {
                   </svg>
                   <a href="https://t.me/EYOBBOOKSHAWASSA" target="_blank" rel="noopener noreferrer" className="hover:underline">@eyobbook</a>
                 </div>
+                <div className="flex items-center gap-3">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.96-.34 3.94-1.36 5.61-1.57 2.6-4.48 4.21-7.53 4.06-2.52-.13-4.9-1.38-6.42-3.32-1.66-2.1-2.18-4.9-.99-7.3 1.05-2.11 3.12-3.66 5.48-4.04v4.06c-1.34.18-2.6.93-3.23 2.08-.82 1.5-.54 3.42.66 4.6 1.16 1.13 2.94 1.48 4.42.75 1.42-.71 2.27-2.19 2.27-3.79V.02z"/>
+                  </svg>
+                  <a href="https://tiktok.com/@eyobbookshawassa" target="_blank" rel="noopener noreferrer" className="hover:underline">@eyobbookshawassa</a>
+                </div>
+              </div>
+
+              {/* Map Embed Section */}
+              <div className="mt-8 rounded-xl overflow-hidden border border-black/10">
+                <div className="bg-[#F5F0E6] p-3 text-center border-b border-black/10">
+                  <h4 className="font-['Impact',_sans-serif] tracking-wider text-[#1A1A1A]">Eyob Bookstore</h4>
+                  <p className="text-xs font-bold text-[#8B0000]">Hawassa, Ethiopia</p>
+                </div>
+                <div className="w-full h-[400px] md:h-[450px]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.7882532539334!2d38.474110074758265!3d7.043153492958963!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b145003352713d%3A0x5d0aa60f94ecc0df!2sEyob%20bookstore!5e1!3m2!1sen!2set!4v1791103034524!5m2!1sen!2set"
+                    className="w-full h-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <a
+                  href="https://www.google.com/maps?cid=6704381335968596191"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded bg-[#8B0000] px-6 py-3 text-sm font-bold text-[#FDFBF7] shadow hover:bg-[#5C0000] transition-colors uppercase tracking-wide"
+                >
+                  📍 Get Directions
+                </a>
               </div>
             </div>
           </div>
