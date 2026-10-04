@@ -13,8 +13,6 @@ import { DEFAULT_ATTRIBUTION, type Proverb } from "../data/proverbs";
 const DISTANCE_THRESHOLD = 0.18;
 /** A quick flick (px per ms) also changes slides, even if it's short. */
 const VELOCITY_THRESHOLD = 0.45;
-/** Rubber-band resistance when dragging past the first/last card. */
-const EDGE_RESISTANCE = 0.3;
 
 type DragState = {
   pointerId: number;
@@ -59,10 +57,6 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
   });
 
   const count = filteredItems.length;
-
-  useEffect(() => {
-    setIndex(0);
-  }, [selectedCategory, search]);
 
   const goTo = useCallback(
     (next: number) => {
@@ -159,7 +153,10 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
             type="text" 
             placeholder={lang === "en" ? "Search proverbs..." : "ምሳሌዎችን ይፈልጉ..."}
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setIndex(0);
+            }}
             className="flex-grow rounded-full px-6 py-3 border border-black/10 shadow-sm focus:outline-none focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] bg-white text-[#1A1A1A] placeholder:text-gray-400 w-full"
           />
           <button
@@ -174,7 +171,10 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
         {allCategories.length > 0 && (
           <div className="flex flex-wrap justify-center gap-2 max-w-4xl">
             <button
-              onClick={() => setSelectedCategory(null)}
+              onClick={() => {
+                setSelectedCategory(null);
+                setIndex(0);
+              }}
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 selectedCategory === null ? "bg-[#1A1A1A] text-white" : "bg-white text-[#1A1A1A] border border-black/10 hover:border-[#8B0000]"
               }`}
@@ -184,7 +184,10 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
             {allCategories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => {
+                  setSelectedCategory(cat);
+                  setIndex(0);
+                }}
                 className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                   selectedCategory === cat ? "bg-[#8B0000] text-white shadow-md" : "bg-white text-[#1A1A1A] border border-black/10 hover:border-[#8B0000]"
                 }`}

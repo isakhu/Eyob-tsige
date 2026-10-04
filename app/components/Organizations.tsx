@@ -1,4 +1,5 @@
 import React from "react";
+import { bookstoreImages } from "../data/bookstoreImages";
 
 export default function Organizations() {
   return (
@@ -19,19 +20,9 @@ export default function Organizations() {
               <img src="/images/books/bookstore1.png" alt="Eyob Tsige Bookstore" className="w-full h-full object-cover" />
             </div>
             <div className="flex gap-1 h-32 mt-1 overflow-x-auto snap-x pb-1" style={{ scrollbarWidth: 'none' }}>
-              {[
-                "bookstore2.png", 
-                "bookstore3.png", 
-                "bookstore4.png", 
-                "bookstore5.png",
-                "bookstore6.jpg",
-                "bookstore7.jpg",
-                "bookstore8.png",
-                "bookstore9.png",
-                "bookstore10.png"
-              ].map((filename, i) => (
+              {bookstoreImages.map((filename, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={i} src={`/images/books/${filename}`} alt={`Eyob Tsige Bookstore ${i + 2}`} className="w-[49.5%] md:w-[32.5%] h-full object-cover shrink-0 snap-start rounded-sm" />
+                <img key={i} src={`/images/books/eyob-books/${filename}`} alt={`Eyob Tsige Bookstore Book ${i + 1}`} className="w-[49.5%] md:w-[32.5%] h-full object-cover shrink-0 snap-start rounded-sm" loading="lazy" />
               ))}
             </div>
             <div className="p-8">
