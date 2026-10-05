@@ -132,10 +132,18 @@ export default function Organizations() {
             </div>
 
             {/* Union Academy */}
-            <div className="flex-grow flex flex-col justify-center rounded-3xl p-8 md:p-12 border border-[#D4A63A]/30 bg-gradient-to-br from-white to-[#F5F0E6] shadow-[0_20px_50px_rgba(212,166,58,0.1)] transition-transform hover:-translate-y-1 relative">
+            <div className="flex-grow flex flex-col justify-center rounded-3xl p-8 md:p-12 border border-[#D4A63A]/30 bg-gradient-to-br from-white to-[#F5F0E6] shadow-[0_20px_50px_rgba(212,166,58,0.1)] transition-transform hover:-translate-y-1 relative items-center text-center">
+              <div className="mb-6 w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white bg-white">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/images/union-logo.png" 
+                  alt="Union Academy Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <span className="text-[#8B0000] text-sm font-bold tracking-[0.2em] uppercase">Director</span>
               <h3 className="mt-2 text-3xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A]">Union Academy</h3>
-              <p className="mt-4 text-[#1A1A1A]/70 leading-relaxed font-medium">
+              <p className="mt-4 text-[#1A1A1A]/70 leading-relaxed font-medium max-w-lg">
                 An institution committed to academic excellence, leadership development, and character building. Empowering the next generation of leaders.
               </p>
 
