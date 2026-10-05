@@ -53,7 +53,7 @@ export default function Biography() {
                 Eyob Tsige Terefe is a highly respected author, speaker, and media personality whose work has left an indelible mark on Ethiopian literature and thought leadership. 
               </p>
               <p>
-                With a deep background in theology, psychology, and leadership, his writings and broadcasts bridge the gap between profound wisdom and practical daily living. He is the mastermind behind the "Eyob Bookstore", housing thousands of literary works.
+                With a deep background in theology, psychology, and leadership, his writings and broadcasts bridge the gap between profound wisdom and practical daily living. He is the mastermind behind the &quot;Eyob Bookstore&quot;, housing thousands of literary works.
               </p>
               <p>
                 Through Semay Multimedia and Union Academy, he continues to build platforms that elevate educational and inspirational messaging for the next generation.
