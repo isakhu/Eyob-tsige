@@ -79,7 +79,7 @@ export default function Organizations() {
                 </div>
                 <div className="w-full h-[400px] md:h-[450px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.7882532539334!2d38.474110074758265!3d7.043153492958963!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b145003352713d%3A0x5d0aa60f94ecc0df!2sEyob%20bookstore!5e1!3m2!1sen!2set!4v1791103034524!5m2!1sen!2set"
+                    src="https://maps.google.com/maps?q=Eyob%20bookstore%20Hawassa&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     className="w-full h-full border-0"
                     allowFullScreen
                     loading="lazy"
