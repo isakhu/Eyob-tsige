@@ -80,6 +80,11 @@ export default function Home() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
             </svg>
           </a>
+          <a href="#media" className="shrink-0 p-2 rounded-full hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]" aria-label="Media">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+            </svg>
+          </a>
           <a href="#education" className="shrink-0 p-2 rounded-full hover:bg-black/5 transition-colors text-[#1A1A1A]/70 hover:text-[#8B0000]" aria-label="Education">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
@@ -189,13 +194,41 @@ export default function Home() {
       <Reveal><Contact /></Reveal>
 
       {/* Footer */}
-      <Reveal><footer className="border-t border-black/5 bg-[#FDFBF7]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-12 text-sm text-[#1A1A1A]/60 md:flex-row md:items-center md:justify-between">
-          <p className="font-body font-bold tracking-widest uppercase">© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
-          <p className="flex items-center gap-2 font-medium font-body">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4A63A]"></span>
-            More verified biography and media content will be added.
-          </p>
+      <Reveal><footer className="border-t border-black/5 bg-[#FDFBF7] pt-20 pb-10">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="col-span-1 md:col-span-2">
+              <h2 className="text-3xl font-display text-[#1A1A1A] mb-4 font-semibold italic">Eyob Tsige Terefe</h2>
+              <p className="text-[#1A1A1A]/70 font-body text-sm leading-relaxed max-w-sm">
+                Author, educator, and visionary leader. Empowering the next generation through profound literature, academic excellence, and impactful media broadcasting.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-body font-bold text-xs uppercase tracking-widest text-[#8B0000] mb-6">Organizations</h3>
+              <ul className="space-y-4 text-sm font-body text-[#1A1A1A]/80 font-medium">
+                <li><a href="#organizations" className="hover:text-[#8B0000] transition-colors">Eyob Bookstore</a></li>
+                <li><a href="/semay" className="hover:text-[#8B0000] transition-colors">Semay Multimedia</a></li>
+                <li><a href="#organizations" className="hover:text-[#8B0000] transition-colors">Union Academy</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-body font-bold text-xs uppercase tracking-widest text-[#8B0000] mb-6">Social Connect</h3>
+              <ul className="space-y-4 text-sm font-body text-[#1A1A1A]/80 font-medium">
+                <li><a href="https://t.me/EYOBBOOKSHAWASSA" target="_blank" rel="noopener noreferrer" className="hover:text-[#8B0000] transition-colors">Telegram</a></li>
+                <li><a href="https://tiktok.com/@eyobbookshawassa" target="_blank" rel="noopener noreferrer" className="hover:text-[#8B0000] transition-colors">TikTok</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-black/10 text-xs font-body text-[#1A1A1A]/50 font-medium">
+            <p className="mb-4 md:mb-0 uppercase tracking-widest">© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <a href="#contact" className="hover:text-[#8B0000] transition-colors">Privacy Policy</a>
+              <a href="#contact" className="hover:text-[#8B0000] transition-colors">Terms of Service</a>
+            </div>
+          </div>
         </div>
       </footer></Reveal>
     </main>

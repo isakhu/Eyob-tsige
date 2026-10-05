@@ -19,9 +19,23 @@ const notoEthiopic = Noto_Serif_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: "Eyob Tsige Terefe | Author & Leader",
-  description:
-    "The professional profile of Eyob Tsige Terefe — education, leadership, media and community work.",
+  title: "Eyob Tsige Terefe | Author, Educator & Leader",
+  description: "The official portfolio of Eyob Tsige Terefe. Explore his literary works, educational leadership at Union Academy, and media broadcasts via Semay Multimedia.",
+  keywords: ["Eyob Tsige Terefe", "Ethiopian Author", "Semay Multimedia", "Union Academy", "Ethiopian Leadership", "Amharic Proverbs", "Hawassa"],
+  authors: [{ name: "Eyob Tsige Terefe" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://eyobtsige.com",
+    title: "Eyob Tsige Terefe | Author & Leader",
+    description: "The professional profile of Eyob Tsige Terefe — education, leadership, media and community work.",
+    siteName: "Eyob Tsige Terefe Official",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eyob Tsige Terefe | Author & Leader",
+    description: "The professional profile of Eyob Tsige Terefe — education, leadership, media and community work.",
+  }
 };
 
 export default function RootLayout({
