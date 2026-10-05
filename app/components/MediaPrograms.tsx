@@ -17,10 +17,10 @@ const programs = [
     description: "Daily inspirational messages reaching millions of listeners across the country."
   },
   {
-    title: "Semay Podcasts",
-    type: "Digital Media",
-    channel: "YouTube & Spotify",
-    description: "Deep-dive interviews and theological discussions available on demand."
+    title: "Semay Multimedia",
+    type: "Radio Broadcast",
+    channel: "South FM 100.9",
+    description: "Deep-dive interviews and theological discussions."
   }
 ];
 
