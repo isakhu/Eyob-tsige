@@ -5,18 +5,6 @@ import anime from "animejs";
 
 const programs = [
   {
-    title: "The Eyob Show",
-    type: "Television Program",
-    channel: "National TV",
-    description: "A weekly broadcast focusing on leadership, psychology, and personal development."
-  },
-  {
-    title: "Words of Wisdom",
-    type: "Radio Broadcast",
-    channel: "FM Radio 98.1",
-    description: "Daily inspirational messages reaching millions of listeners across the country."
-  },
-  {
     title: "Semay Multimedia",
     type: "Radio Broadcast",
     channel: "South FM 100.9",
@@ -69,7 +57,7 @@ export default function MediaPrograms() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="max-w-md mx-auto gap-6">
           {programs.map((program, index) => (
             <div 
               key={index} 
