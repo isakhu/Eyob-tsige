@@ -14,7 +14,6 @@ const programs = [
 
 export default function MediaPrograms() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const videoRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // Animate cards staggered entrance
@@ -26,18 +25,6 @@ export default function MediaPrograms() {
       easing: "easeOutExpo",
       duration: 1200,
     });
-
-    // Continuous floating animation for the mock video
-    if (videoRef.current) {
-      anime({
-        targets: videoRef.current,
-        translateY: [-10, 10],
-        direction: "alternate",
-        loop: true,
-        easing: "easeInOutSine",
-        duration: 3000,
-      });
-    }
   }, []);
 
   return (
@@ -90,21 +77,7 @@ export default function MediaPrograms() {
           ))}
         </div>
 
-        {/* Mock YouTube Video Embed */}
-        <div 
-          ref={videoRef}
-          className="mt-16 rounded-2xl overflow-hidden border border-white/10 aspect-video bg-black relative flex items-center justify-center group cursor-pointer hover:border-white/30 transition-colors"
-        >
-          {/* This would be an iframe in a real production environment */}
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=2056&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity"></div>
-          <div className="relative z-10 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-900/50 group-hover:scale-110 transition-transform">
-            <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-          </div>
-          <div className="absolute bottom-6 left-6 z-10">
-            <h4 className="font-display text-2xl text-white">Watch: The Philosophy of Leadership</h4>
-            <p className="text-sm text-white/80 font-body mt-2">Semay Multimedia • 1.2M Views</p>
-          </div>
-        </div>
+
 
       </div>
     </section>
