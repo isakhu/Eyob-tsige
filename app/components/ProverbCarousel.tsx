@@ -159,7 +159,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
           />
           <button
             onClick={random}
-            className="rounded-full bg-[#8B0000] px-6 py-3 text-white font-bold shadow-md hover:bg-[#5C0000] transition-colors whitespace-nowrap"
+            className="rounded-full bg-[#8B0000] px-6 py-3 text-white font-bold shadow-md hover:bg-[#5C0000] transition-colors whitespace-nowrap font-amharic"
           >
             በዘፈቀደ ምረጥ (Random)
           </button>
@@ -198,7 +198,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
       </div>
 
       {count === 0 ? (
-        <div className="text-center py-20 text-[#1A1A1A]/60 font-medium">
+        <div className="text-center py-20 text-[#1A1A1A]/60 font-medium font-amharic">
           ምንም ምሳሌ አልተገኘም። / No proverbs found.
         </div>
       ) : (
@@ -349,7 +349,7 @@ function ProverbCard({ item, active }: { item: Proverb; active: boolean }) {
             key={textLang}
             lang={textLang}
             className={`max-w-4xl whitespace-pre-line text-lg md:text-xl lg:text-2xl font-medium text-[#1A1A1A]/90 leading-snug md:leading-relaxed animate-[heroFadeUp_0.5s_ease-out_both] ${
-              textLang === "am" ? "font-['var(--font-noto-ethiopic)',_serif]" : "font-['Georgia',_'Times_New_Roman',_serif]"
+              textLang === "am" ? "font-amharic" : "font-display"
             } ${isLong && !expanded ? "line-clamp-[8]" : ""}`}
           >
             {text}
@@ -387,7 +387,7 @@ function ProverbCard({ item, active }: { item: Proverb; active: boolean }) {
         )}
 
 
-        <p className="mt-6 pt-4 border-t border-black/10 text-sm font-serif italic text-[#8B0000]/80 text-right">
+        <p className="mt-6 pt-4 border-t border-black/10 text-sm font-display italic text-[#8B0000]/80 text-right">
           &mdash; {attribution}
         </p>
       </div>

@@ -50,9 +50,9 @@ export default function MediaPrograms() {
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="flex flex-col items-center text-center mb-16">
-          <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#D4A63A] text-xl">Broadcasting</p>
-          <h2 className="mt-2 text-4xl md:text-5xl font-['Impact',_sans-serif] uppercase">Radio & Television</h2>
-          <p className="mt-4 max-w-2xl text-[#FDFBF7]/70 leading-relaxed">
+          <p className="text-[11px] font-body uppercase tracking-[0.2em] text-[#D4A63A] font-bold">Broadcasting</p>
+          <h2 className="mt-4 text-4xl md:text-5xl font-display text-[#FDFBF7]">Radio & Television</h2>
+          <p className="mt-4 max-w-2xl text-[#FDFBF7]/80 leading-relaxed font-body">
             Produced by Semay Multimedia, Eyob's programs have been a staple of Ethiopian media, delivering profound insights directly into homes nationwide.
           </p>
         </div>
@@ -75,9 +75,9 @@ export default function MediaPrograms() {
                   <svg className="w-6 h-6 text-[#D4A63A]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 )}
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#D4A63A]">{program.channel}</span>
-              <h3 className="text-2xl font-['Impact',_sans-serif] uppercase mt-2 mb-3">{program.title}</h3>
-              <p className="text-[#FDFBF7]/60 text-sm leading-relaxed">{program.description}</p>
+              <span className="text-[10px] font-body font-bold uppercase tracking-[0.2em] text-[#D4A63A]">{program.channel}</span>
+              <h3 className="text-2xl font-display mt-2 mb-3 text-white">{program.title}</h3>
+              <p className="text-[#FDFBF7]/70 text-sm leading-relaxed font-body">{program.description}</p>
             </div>
           ))}
         </div>
@@ -93,8 +93,8 @@ export default function MediaPrograms() {
             <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
           </div>
           <div className="absolute bottom-6 left-6 z-10">
-            <h4 className="font-['Impact',_sans-serif] tracking-wider text-xl">Watch: The Philosophy of Leadership</h4>
-            <p className="text-sm text-white/70">Semay Multimedia • 1.2M Views</p>
+            <h4 className="font-display text-2xl text-white">Watch: The Philosophy of Leadership</h4>
+            <p className="text-sm text-white/80 font-body mt-2">Semay Multimedia • 1.2M Views</p>
           </div>
         </div>
 

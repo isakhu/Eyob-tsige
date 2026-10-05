@@ -39,10 +39,10 @@ export default function EducationCard({ items }: { items: EducationItem[] }) {
               </svg>
             </div>
             
-            <h3 className="text-4xl md:text-5xl font-['Impact',_sans-serif] uppercase text-[#FDFBF7] tracking-wider mb-4">
+            <h3 className="text-4xl md:text-5xl font-display text-[#FDFBF7] tracking-wider mb-4">
               Academic Journey
             </h3>
-            <p className="text-[#D4A63A] font-medium text-lg md:text-xl mb-10 tracking-wide font-['Georgia',_'Times_New_Roman',_serif] italic">
+            <p className="text-[#D4A63A] font-body text-lg md:text-xl mb-10 tracking-wide italic">
               {items.length} Degrees &amp; Certifications
             </p>
             
@@ -98,8 +98,8 @@ export default function EducationCard({ items }: { items: EducationItem[] }) {
               </div>
             )}
             <div className="p-8 flex flex-col flex-grow">
-              <h3 className="text-2xl font-bold text-[#1A1A1A] group-hover:text-[#8B0000] transition-colors line-clamp-2">{item.school}</h3>
-              <p className="mt-4 text-[#1A1A1A]/80 text-lg leading-relaxed flex-grow">{item.program}</p>
+              <h3 className="text-2xl font-display text-[#1A1A1A] group-hover:text-[#8B0000] transition-colors line-clamp-2">{item.school}</h3>
+              <p className="mt-4 text-[#1A1A1A]/80 text-lg font-body leading-relaxed flex-grow">{item.program}</p>
               <div className="mt-8 flex items-center pt-6 border-t border-black/5">
                 <span className="inline-flex rounded-full bg-[#8B0000]/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#8B0000]">
                   {item.status}

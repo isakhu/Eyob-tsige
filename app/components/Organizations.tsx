@@ -16,8 +16,8 @@ export default function Organizations() {
     <section id="organizations" className="bg-[#FDFBF7] py-24 border-t border-black/5">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-center text-center mb-16">
-          <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Enterprises & Ventures</p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-['Impact',_sans-serif] uppercase tracking-wide md:text-5xl text-[#1A1A1A]">
+          <p className="text-sm font-body font-bold uppercase tracking-[0.2em] text-[#8B0000]">Enterprises & Ventures</p>
+          <h2 className="mt-4 max-w-3xl text-4xl md:text-5xl font-display text-[#1A1A1A] italic">
             Organizations I Lead
           </h2>
         </div>
@@ -39,8 +39,8 @@ export default function Organizations() {
               </button>
             </div>
             <div className="p-8">
-              <h3 className="text-2xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A]">Eyob Tsige Bookstore</h3>
-              <p className="mt-4 text-[#1A1A1A]/70 leading-relaxed font-medium">
+              <h3 className="text-3xl font-display text-[#1A1A1A]">Eyob Tsige Bookstore</h3>
+              <p className="mt-4 text-[#1A1A1A]/80 leading-relaxed font-body">
                 A hub of knowledge, inspiration, and personal development. We provide a curated selection of books that empower minds and transform lives.
               </p>
               <div className="mt-6 flex flex-col gap-3 text-sm font-bold text-[#8B0000]">
@@ -74,8 +74,8 @@ export default function Organizations() {
               {/* Map Embed Section */}
               <div className="mt-8 rounded-xl overflow-hidden border border-black/10">
                 <div className="bg-[#F5F0E6] p-3 text-center border-b border-black/10">
-                  <h4 className="font-['Impact',_sans-serif] tracking-wider text-[#1A1A1A]">Eyob Bookstore</h4>
-                  <p className="text-xs font-bold text-[#8B0000]">Hawassa, Ethiopia</p>
+                  <h4 className="font-display text-lg text-[#1A1A1A] italic">Eyob Bookstore</h4>
+                  <p className="text-[10px] font-bold text-[#8B0000] font-body tracking-wider uppercase">Hawassa, Ethiopia</p>
                 </div>
                 <div className="w-full h-[400px] md:h-[450px]">
                   <iframe
@@ -115,9 +115,9 @@ export default function Organizations() {
             <div className="flex-grow flex flex-col justify-center rounded-3xl p-8 md:p-12 border border-black/5 bg-[#1A1A1A] text-[#FDFBF7] shadow-[0_20px_50px_rgba(0,0,0,0.2)] transition-transform hover:-translate-y-1 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle_at_top_right,#8B0000_0%,transparent_70%)] opacity-40"></div>
               <div className="relative z-10">
-                <span className="text-[#D4A63A] text-sm font-bold tracking-[0.2em] uppercase">Owner & CEO</span>
-                <h3 className="mt-2 text-3xl font-['Impact',_sans-serif] uppercase">Semay Multimedia</h3>
-                <p className="mt-4 text-[#FDFBF7]/80 leading-relaxed font-medium">
+                <span className="text-[#D4A63A] text-[10px] font-body font-bold tracking-[0.2em] uppercase">Owner & CEO</span>
+                <h3 className="mt-2 text-3xl md:text-4xl font-display text-[#FDFBF7]">Semay Multimedia</h3>
+                <p className="mt-4 text-[#FDFBF7]/80 leading-relaxed font-body">
                   A premier media production company dedicated to creating impactful, high-quality audio and visual content. We focus on elevating educational and inspirational messaging through state-of-the-art media.
                 </p>
                 <div className="mt-8">
@@ -141,9 +141,9 @@ export default function Organizations() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="text-[#8B0000] text-sm font-bold tracking-[0.2em] uppercase">Director</span>
-              <h3 className="mt-2 text-3xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A]">Union Academy</h3>
-              <p className="mt-4 text-[#1A1A1A]/70 leading-relaxed font-medium max-w-lg">
+              <span className="text-[#8B0000] text-[10px] font-body font-bold tracking-[0.2em] uppercase">Director</span>
+              <h3 className="mt-2 text-3xl md:text-4xl font-display text-[#1A1A1A]">Union Academy</h3>
+              <p className="mt-4 text-[#1A1A1A]/80 leading-relaxed font-body max-w-lg">
                 An institution committed to academic excellence, leadership development, and character building. Empowering the next generation of leaders.
               </p>
 
@@ -157,8 +157,8 @@ export default function Organizations() {
         <div className="fixed inset-0 z-[100] flex flex-col bg-[#FDFBF7] animate-[heroFadeUp_0.3s_ease-out_both]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between p-6 border-b border-black/10 bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm gap-4">
             <div>
-              <h2 className="text-2xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A] tracking-wider">Eyob Tsige Bookstore</h2>
-              <p className="text-sm font-bold text-[#8B0000]">Previewing {bookstoreBooks.length} books. Join Telegram for our full 8,000+ collection!</p>
+              <h2 className="text-3xl font-display text-[#1A1A1A]">Eyob Tsige Bookstore</h2>
+              <p className="text-[11px] font-bold text-[#8B0000] font-body uppercase tracking-wider mt-1">Previewing {bookstoreBooks.length} books. Join Telegram for our full 8,000+ collection!</p>
             </div>
             <div className="flex items-center gap-3">
               <a href="https://t.me/EYOBBOOKSHAWASSA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-[#0088cc] text-white font-bold rounded hover:bg-[#0077b3] transition-colors text-sm">

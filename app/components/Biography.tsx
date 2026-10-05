@@ -46,9 +46,9 @@ export default function Biography() {
           </div>
           
           <div className="flex flex-col justify-center">
-            <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl mb-4">About The Author</p>
-            <h2 className="text-4xl md:text-5xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A] mb-6">Eyob Tsige Terefe</h2>
-            <div className="space-y-4 text-[#1A1A1A]/70 text-lg leading-relaxed">
+            <p className="text-sm font-body font-bold uppercase tracking-[0.2em] text-[#8B0000] mb-4">About The Author</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-[#1A1A1A] mb-6 font-medium tracking-tight">Eyob Tsige Terefe</h2>
+            <div className="space-y-4 text-[#1A1A1A]/80 text-lg leading-relaxed font-body">
               <p>
                 Eyob Tsige Terefe is a highly respected author, speaker, and media personality whose work has left an indelible mark on Ethiopian literature and thought leadership. 
               </p>
@@ -65,8 +65,8 @@ export default function Biography() {
         {/* Timeline Section */}
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Legacy</p>
-            <h3 className="mt-2 text-3xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A]">Professional Timeline</h3>
+            <p className="text-sm font-body font-bold uppercase tracking-[0.2em] text-[#8B0000] mb-4">Legacy</p>
+            <h3 className="text-4xl font-display text-[#1A1A1A] italic">Professional Timeline</h3>
           </div>
 
           <div className="relative border-l-2 border-[#8B0000]/20 ml-4 md:ml-0 md:left-1/2 md:-translate-x-[1px] space-y-12">
@@ -82,9 +82,9 @@ export default function Biography() {
                     {/* Small arrow pointing to the dot */}
                     <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-t border-r border-black/5 transform ${index % 2 === 0 ? 'right-[-8px] rotate-45' : 'left-[-8px] -rotate-135'}`}></div>
                     
-                    <span className="inline-block px-3 py-1 bg-[#F5F0E6] text-[#8B0000] text-xs font-bold uppercase tracking-widest rounded-full mb-3">{event.year}</span>
-                    <h4 className="text-xl font-bold text-[#1A1A1A] mb-2">{event.role}</h4>
-                    <p className="text-[#1A1A1A]/70 text-sm leading-relaxed">{event.description}</p>
+                    <span className="inline-block px-3 py-1 bg-[#F5F0E6] text-[#8B0000] text-[10px] font-bold uppercase tracking-widest rounded-full mb-3 font-body">{event.year}</span>
+                    <h4 className="text-2xl font-display text-[#1A1A1A] mb-2 font-medium">{event.role}</h4>
+                    <p className="text-[#1A1A1A]/80 text-sm leading-relaxed font-body">{event.description}</p>
                   </div>
                 </div>
               </div>

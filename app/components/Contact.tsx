@@ -9,9 +9,9 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-16">
           
           <div>
-            <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl mb-2">Get In Touch</p>
-            <h2 className="text-4xl md:text-5xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A] mb-6">Booking & Contact</h2>
-            <p className="text-[#1A1A1A]/70 text-lg leading-relaxed mb-8">
+            <p className="text-sm font-body font-bold uppercase tracking-[0.2em] text-[#8B0000] mb-2">Get In Touch</p>
+            <h2 className="text-4xl md:text-5xl font-display text-[#1A1A1A] mb-6 italic">Booking & Contact</h2>
+            <p className="text-[#1A1A1A]/80 text-lg leading-relaxed mb-8 font-body">
               For speaking engagements, media appearances, literary inquiries, or questions about Union Academy and Semay Multimedia.
             </p>
             

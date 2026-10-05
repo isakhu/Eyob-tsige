@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Pacifico, Noto_Serif_Ethiopic } from "next/font/google";
+import { Playfair_Display, Inter, Noto_Serif_Ethiopic } from "next/font/google";
 import "./globals.css";
 
-const pacifico = Pacifico({
-  weight: "400",
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-pacifico",
+  variable: "--font-playfair",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const notoEthiopic = Noto_Serif_Ethiopic({
@@ -15,7 +19,7 @@ const notoEthiopic = Noto_Serif_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: "Eyob Tsige Terefe",
+  title: "Eyob Tsige Terefe | Author & Leader",
   description:
     "The professional profile of Eyob Tsige Terefe — education, leadership, media and community work.",
 };
@@ -25,7 +29,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${pacifico.variable} ${notoEthiopic.variable} antialiased bg-[#FDFBF7]`}>{children}</body>
+      <body className={`${inter.variable} ${playfair.variable} ${notoEthiopic.variable} font-sans antialiased bg-[#FDFBF7]`}>
+        {children}
+      </body>
     </html>
   );
 }

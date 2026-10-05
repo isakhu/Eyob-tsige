@@ -110,41 +110,41 @@ export default function Home() {
           className="absolute inset-0 -z-20 h-full w-full object-cover object-[72%_center] md:object-right animate-[heroZoom_18s_ease-out_forwards]"
         />
         {/* Readability overlays: light fade from the left + blend into page at the bottom */}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#FDFBF7_0%,rgba(253,251,247,0.92)_30%,rgba(253,251,247,0.45)_58%,rgba(253,251,247,0)_80%)] max-md:bg-[linear-gradient(0deg,#FDFBF7_10%,rgba(253,251,247,0.85)_45%,rgba(253,251,247,0.25)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#FDFBF7_0%,rgba(253,251,247,0.95)_35%,rgba(253,251,247,0.5)_60%,rgba(253,251,247,0)_85%)] max-md:bg-[linear-gradient(0deg,#FDFBF7_10%,rgba(253,251,247,0.9)_45%,rgba(253,251,247,0.3)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-[linear-gradient(0deg,#FDFBF7,transparent)]" />
         {/* Subtle warm glow */}
-        <div className="absolute -left-40 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-[#D4A63A]/15 blur-[140px]" />
+        <div className="absolute -left-40 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-[#D4A63A]/20 blur-[140px]" />
 
         <div className="mx-auto w-full max-w-6xl px-6 pb-40 pt-[45vh] md:py-32">
         <div className="flex max-w-xl flex-col justify-center animate-[heroFadeUp_1s_ease-out_both]">
-          <h1 className="text-6xl md:text-8xl leading-[0.95] tracking-normal font-['Impact',_sans-serif] text-[#1A1A1A] uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
-            Eyob Tsige<br />Terefe
+          <h1 className="text-6xl md:text-8xl leading-[1.1] tracking-tight font-display text-[#1A1A1A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.05)] font-semibold">
+            Eyob Tsige<br /><span className="italic">Terefe</span>
           </h1>
-          <p className="mt-7 max-w-2xl leading-relaxed text-[#1A1A1A]/80 font-['var(--font-pacifico)',_cursive] text-3xl">
+          <p className="mt-6 max-w-2xl leading-relaxed text-[#1A1A1A]/80 font-body text-xl md:text-2xl font-light">
             Education, Media & Leadership.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#proverbs" className="rounded bg-[#8B0000] px-8 py-3.5 text-sm font-bold text-[#FDFBF7] shadow-[0_4px_15px_rgba(139,0,0,0.3)] hover:bg-[#5C0000] transition-all hover:-translate-y-1 font-['Impact',_sans-serif] uppercase tracking-wide">
+            <a href="#proverbs" className="rounded bg-[#8B0000] px-8 py-4 text-sm font-bold text-[#FDFBF7] shadow-[0_4px_15px_rgba(139,0,0,0.3)] hover:bg-[#5C0000] transition-all hover:-translate-y-1 font-body uppercase tracking-[0.15em]">
               Read Proverbs & Wisdom
             </a>
-            <a href="#organizations" className="rounded border-2 border-[#8B0000] bg-white/40 backdrop-blur-sm px-8 py-3.5 text-sm font-bold text-[#8B0000] hover:bg-[#8B0000]/10 transition-colors font-['Impact',_sans-serif] uppercase tracking-wide">
+            <a href="#organizations" className="rounded border border-[#8B0000]/30 bg-white/50 backdrop-blur-md px-8 py-4 text-sm font-bold text-[#8B0000] hover:bg-[#8B0000]/10 transition-colors font-body uppercase tracking-[0.15em]">
               Organizations
             </a>
           </div>
 
           {/* Based-in glass card */}
-          <div className="mt-12 flex max-w-lg flex-col gap-4 rounded-xl border border-black/5 border-l-4 border-l-[#8B0000] bg-white/70 p-6 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] sm:flex-row sm:items-center sm:gap-8">
+          <div className="mt-16 flex max-w-lg flex-col gap-4 rounded-xl border border-black/5 border-l-4 border-l-[#8B0000] bg-white/70 p-6 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] sm:flex-row sm:items-center sm:gap-8">
             <div className="shrink-0">
-              <p className="text-xs text-[#8B0000] tracking-[0.2em] uppercase font-['Impact',_sans-serif]">Based in</p>
-              <p className="mt-1 text-2xl font-['var(--font-pacifico)',_cursive] text-[#1A1A1A]">Hawassa, Ethiopia</p>
+              <p className="text-[10px] text-[#8B0000] tracking-[0.2em] uppercase font-bold font-body">Based in</p>
+              <p className="mt-1 text-xl font-display font-medium text-[#1A1A1A] italic">Hawassa, Ethiopia</p>
             </div>
-            <div className="space-y-2 text-sm leading-relaxed text-[#1A1A1A]/85 font-medium sm:border-l sm:border-black/10 sm:pl-8">
+            <div className="space-y-3 text-sm leading-relaxed text-[#1A1A1A]/85 font-medium sm:border-l sm:border-black/10 sm:pl-8 font-body">
               <p className="flex items-center gap-3">
-                <span className="w-2 h-2 shrink-0 bg-[#D4A63A] rotate-45"></span>
+                <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#D4A63A]"></span>
                 Owner & CEO, SEMAY Multimedia
               </p>
               <p className="flex items-center gap-3">
-                <span className="w-2 h-2 shrink-0 bg-[#D4A63A] rotate-45"></span>
+                <span className="w-1.5 h-1.5 shrink-0 rounded-full bg-[#D4A63A]"></span>
                 Director, Union Academy
               </p>
             </div>
@@ -165,7 +165,7 @@ export default function Home() {
       <Reveal><section id="education" className="bg-[#FDFBF7] text-[#1A1A1A]">
         <div className="mx-auto max-w-7xl px-6 py-28">
           <div className="flex flex-col items-center text-center mb-16">
-            <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Education</p>
+            <p className="text-sm font-body uppercase tracking-[0.2em] text-[#8B0000] font-bold">Education</p>
           </div>
           
           <EducationCard items={education} />
@@ -176,8 +176,8 @@ export default function Home() {
       <Reveal><section id="proverbs" className="border-y border-black/5 bg-[#F5F0E6] py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center text-center mb-12">
-            <p className="text-sm font-['Impact',_sans-serif] uppercase tracking-[0.2em] text-[#8B0000] text-xl">Words of Wisdom</p>
-            <h2 className="mt-4 max-w-3xl text-5xl font-['var(--font-pacifico)',_cursive] text-[#1A1A1A]">
+            <p className="text-sm font-body uppercase tracking-[0.2em] text-[#8B0000] font-bold">Words of Wisdom</p>
+            <h2 className="mt-4 max-w-3xl text-5xl font-display text-[#1A1A1A] italic">
               Proverbs & Reflections
             </h2>
           </div>
@@ -191,9 +191,9 @@ export default function Home() {
       {/* Footer */}
       <Reveal><footer className="border-t border-black/5 bg-[#FDFBF7]">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-12 text-sm text-[#1A1A1A]/60 md:flex-row md:items-center md:justify-between">
-          <p className="font-['Impact',_sans-serif] tracking-widest text-lg uppercase">© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
-          <p className="flex items-center gap-2 font-medium">
-            <span className="w-2 h-2 bg-[#D4A63A] rotate-45"></span>
+          <p className="font-body font-bold tracking-widest uppercase">© {new Date().getFullYear()} Eyob Tsige Terefe. All rights reserved.</p>
+          <p className="flex items-center gap-2 font-medium font-body">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4A63A]"></span>
             More verified biography and media content will be added.
           </p>
         </div>
