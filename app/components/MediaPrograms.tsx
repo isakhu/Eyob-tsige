@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import anime from "animejs";
 
 const programs = [
   {
@@ -24,6 +25,33 @@ const programs = [
 ];
 
 export default function MediaPrograms() {
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const videoRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Animate cards staggered entrance
+    anime({
+      targets: cardsRef.current,
+      translateY: [50, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(200, { start: 500 }),
+      easing: "easeOutExpo",
+      duration: 1200,
+    });
+
+    // Continuous floating animation for the mock video
+    if (videoRef.current) {
+      anime({
+        targets: videoRef.current,
+        translateY: [-10, 10],
+        direction: "alternate",
+        loop: true,
+        easing: "easeInOutSine",
+        duration: 3000,
+      });
+    }
+  }, []);
+
   return (
     <section id="media" className="bg-[#1A1A1A] py-24 text-[#FDFBF7] relative overflow-hidden">
       {/* Background decoration */}
@@ -43,7 +71,13 @@ export default function MediaPrograms() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {programs.map((program, index) => (
-            <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/10 transition-colors group cursor-default">
+            <div 
+              key={index} 
+              ref={(el) => {
+                if (el) cardsRef.current[index] = el;
+              }}
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/10 transition-colors group cursor-default opacity-0"
+            >
               <div className="w-12 h-12 bg-[#8B0000]/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 {program.type.includes("Television") ? (
                   <svg className="w-6 h-6 text-[#D4A63A]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
@@ -61,7 +95,10 @@ export default function MediaPrograms() {
         </div>
 
         {/* Mock YouTube Video Embed */}
-        <div className="mt-16 rounded-2xl overflow-hidden border border-white/10 aspect-video bg-black relative flex items-center justify-center group cursor-pointer hover:border-white/30 transition-colors">
+        <div 
+          ref={videoRef}
+          className="mt-16 rounded-2xl overflow-hidden border border-white/10 aspect-video bg-black relative flex items-center justify-center group cursor-pointer hover:border-white/30 transition-colors"
+        >
           {/* This would be an iframe in a real production environment */}
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=2056&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity"></div>
           <div className="relative z-10 w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-900/50 group-hover:scale-110 transition-transform">
