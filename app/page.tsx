@@ -216,7 +216,7 @@ export default function Home() {
             <div>
               <h3 className="font-body font-bold text-xs uppercase tracking-widest text-[#8B0000] mb-6">Social Connect</h3>
               <ul className="space-y-4 text-sm font-body text-[#1A1A1A]/80 font-medium">
-                <li><a href="https://t.me/EYOBBOOKSHAWASSA" target="_blank" rel="noopener noreferrer" className="hover:text-[#8B0000] transition-colors">Telegram</a></li>
+                <li><a href="https://t.me/eyobbook" target="_blank" rel="noopener noreferrer" className="hover:text-[#8B0000] transition-colors">Telegram</a></li>
                 <li><a href="https://tiktok.com/@eyobbookshawassa" target="_blank" rel="noopener noreferrer" className="hover:text-[#8B0000] transition-colors">TikTok</a></li>
               </ul>
             </div>
