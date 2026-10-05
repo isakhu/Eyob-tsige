@@ -141,7 +141,9 @@ export default function Home() {
           <div className="mt-16 flex max-w-lg flex-col gap-4 rounded-xl border border-black/5 border-l-4 border-l-[#8B0000] bg-white/70 p-6 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] sm:flex-row sm:items-center sm:gap-8">
             <div className="shrink-0">
               <p className="text-[10px] text-[#8B0000] tracking-[0.2em] uppercase font-bold font-body">Based in</p>
-              <p className="mt-1 text-xl font-display font-medium text-[#1A1A1A] italic">Hawassa, Ethiopia</p>
+              <a href="https://web.facebook.com/Hawassa-Sidamo-Ethiopia-109298179090397/" target="_blank" rel="noopener noreferrer" className="mt-1 text-xl font-display font-medium text-[#1A1A1A] italic hover:text-[#8B0000] hover:underline transition-colors block">
+                Hawassa, Sidamo, Ethiopia
+              </a>
             </div>
             <div className="space-y-3 text-sm leading-relaxed text-[#1A1A1A]/85 font-medium sm:border-l sm:border-black/10 sm:pl-8 font-body">
               <p className="flex items-center gap-3">
@@ -209,7 +211,7 @@ export default function Home() {
               <ul className="space-y-4 text-sm font-body text-[#1A1A1A]/80 font-medium">
                 <li><a href="#organizations" className="hover:text-[#8B0000] transition-colors">Eyob Bookstore</a></li>
                 <li><a href="/semay" className="hover:text-[#8B0000] transition-colors">Semay Multimedia</a></li>
-                <li><a href="#organizations" className="hover:text-[#8B0000] transition-colors">Union Academy</a></li>
+                <li><a href="https://web.facebook.com/profile.php?id=100063943534740" target="_blank" rel="noopener noreferrer" className="hover:text-[#8B0000] transition-colors">Union Academy</a></li>
               </ul>
             </div>
 

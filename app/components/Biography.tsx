@@ -9,7 +9,7 @@ const timelineEvents = [
     description: "Continuing to write profound literary works and speaking at major conventions to inspire the next generation."
   },
   {
-    year: "2015 - Present",
+    year: "Sept 2010 - Present",
     role: "Director, Union Academy",
     description: "Leading an institution committed to academic excellence, leadership development, and character building."
   },
@@ -50,7 +50,7 @@ export default function Biography() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-[#1A1A1A] mb-6 font-medium tracking-tight">Eyob Tsige Terefe</h2>
             <div className="space-y-4 text-[#1A1A1A]/80 text-lg leading-relaxed font-body">
               <p>
-                Eyob Tsige Terefe is a highly respected author, speaker, and media personality whose work has left an indelible mark on Ethiopian literature and thought leadership. 
+                Born on December 25th, Eyob Tsige Terefe is a highly respected author, speaker, and media personality whose work has left an indelible mark on Ethiopian literature and thought leadership. 
               </p>
               <p>
                 With a deep background in theology, psychology, and leadership, his writings and broadcasts bridge the gap between profound wisdom and practical daily living. He is the mastermind behind the &quot;Eyob Bookstore&quot;, housing thousands of literary works.

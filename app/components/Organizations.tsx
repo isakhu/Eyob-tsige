@@ -148,6 +148,12 @@ export default function Organizations() {
               <p className="mt-4 text-[#1A1A1A]/80 leading-relaxed font-body max-w-lg">
                 An institution committed to academic excellence, leadership development, and character building. Empowering the next generation of leaders.
               </p>
+              <div className="mt-8">
+                <a href="https://web.facebook.com/profile.php?id=100063943534740" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded border border-[#8B0000]/50 text-[#8B0000] font-bold uppercase tracking-wide hover:bg-[#8B0000] hover:text-[#FDFBF7] transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
+                  Visit Facebook Page
+                </a>
+              </div>
 
             </div>
           </div>

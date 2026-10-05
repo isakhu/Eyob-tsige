@@ -32,7 +32,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-[#1A1A1A]">Location</h4>
-                  <p className="text-[#1A1A1A]/70 text-sm mt-1">Hawassa, Ethiopia</p>
+                  <a href="https://web.facebook.com/Hawassa-Sidamo-Ethiopia-109298179090397/" target="_blank" rel="noopener noreferrer" className="text-[#1A1A1A]/70 text-sm mt-1 hover:text-[#8B0000] hover:underline transition-colors block">Hawassa, Sidamo, Ethiopia</a>
                 </div>
               </div>
             </div>
