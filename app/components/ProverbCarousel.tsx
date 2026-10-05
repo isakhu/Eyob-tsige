@@ -4,7 +4,6 @@ import {
   useCallback,
   useRef,
   useState,
-  useEffect,
   type KeyboardEvent,
 } from "react";
 import { DEFAULT_ATTRIBUTION, type Proverb } from "../data/proverbs";
@@ -24,7 +23,6 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
   const [index, setIndex] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const [lang, setLang] = useState<"am" | "en">("am");
   
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -151,7 +149,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
         <div className="w-full max-w-2xl flex flex-col md:flex-row gap-4 items-center">
           <input 
             type="text" 
-            placeholder={lang === "en" ? "Search proverbs..." : "ምሳሌዎችን ይፈልጉ..."}
+            placeholder="ምሳሌዎችን ይፈልጉ / Search proverbs..."
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
@@ -163,7 +161,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
             onClick={random}
             className="rounded-full bg-[#8B0000] px-6 py-3 text-white font-bold shadow-md hover:bg-[#5C0000] transition-colors whitespace-nowrap"
           >
-            {lang === "en" ? "Random Proverb" : "በዘፈቀደ ምረጥ"}
+            በዘፈቀደ ምረጥ (Random)
           </button>
         </div>
 
@@ -179,7 +177,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
                 selectedCategory === null ? "bg-[#1A1A1A] text-white" : "bg-white text-[#1A1A1A] border border-black/10 hover:border-[#8B0000]"
               }`}
             >
-              {lang === "en" ? "All" : "ሁሉም"}
+              ሁሉም / All
             </button>
             {allCategories.map(cat => (
               <button
@@ -197,31 +195,11 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
             ))}
           </div>
         )}
-
-        {/* Language Toggle */}
-        <div className="flex rounded-full bg-white p-1 border border-black/5 shadow-sm mt-2">
-          <button
-            onClick={() => setLang("am")}
-            className={`rounded-full px-5 py-1.5 text-sm font-bold transition-colors ${
-              lang === "am" ? "bg-[#8B0000] text-[#FDFBF7] shadow-md" : "text-[#1A1A1A]/60 hover:text-[#8B0000]"
-            }`}
-          >
-            አማርኛ
-          </button>
-          <button
-            onClick={() => setLang("en")}
-            className={`rounded-full px-5 py-1.5 text-sm font-bold transition-colors ${
-              lang === "en" ? "bg-[#8B0000] text-[#FDFBF7] shadow-md" : "text-[#1A1A1A]/60 hover:text-[#8B0000]"
-            }`}
-          >
-            English
-          </button>
-        </div>
       </div>
 
       {count === 0 ? (
         <div className="text-center py-20 text-[#1A1A1A]/60 font-medium">
-          {lang === "en" ? "No proverbs found." : "ምንም ምሳሌ አልተገኘም።"}
+          ምንም ምሳሌ አልተገኘም። / No proverbs found.
         </div>
       ) : (
         <>
@@ -271,7 +249,7 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
                     pointerEvents: isActive ? 'auto' : 'none',
                   }}
                 >
-                  <ProverbCard item={item} active={isActive} lang={lang} />
+                  <ProverbCard item={item} active={isActive} />
                 </div>
               );
             })}
@@ -298,8 +276,9 @@ export default function ProverbCarousel({ items }: { items: Proverb[] }) {
 /** Body text longer than this (in characters) is collapsed behind "Read more". */
 const COLLAPSE_AFTER = 450;
 
-function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; lang: "am" | "en" }) {
+function ProverbCard({ item, active }: { item: Proverb; active: boolean }) {
   const [expanded, setExpanded] = useState(false);
+  const [lang, setLang] = useState<"am" | "en">("am");
   const attribution = item.attribution ?? DEFAULT_ATTRIBUTION;
 
   // Use English when selected and available; otherwise fall back to Amharic.
@@ -338,10 +317,30 @@ function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; l
               </span>
             ))}
           </div>
-          {item.placeholder && (
-            <span className="rounded-full border border-black/20 bg-black/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-[#1A1A1A]">
-              Placeholder
-            </span>
+          
+          {item.english && (
+            <div className="flex rounded-full bg-black/5 p-0.5 border border-black/5 z-20">
+              <button
+                type="button"
+                onPointerDown={(e) => e.stopPropagation()}
+                onClick={() => setLang("am")}
+                className={`rounded-full px-3 py-1 text-[11px] font-bold transition-colors ${
+                  lang === "am" ? "bg-[#8B0000] text-white shadow-sm" : "text-[#1A1A1A]/60 hover:text-[#8B0000]"
+                }`}
+              >
+                አማርኛ
+              </button>
+              <button
+                type="button"
+                onPointerDown={(e) => e.stopPropagation()}
+                onClick={() => setLang("en")}
+                className={`rounded-full px-3 py-1 text-[11px] font-bold transition-colors ${
+                  lang === "en" ? "bg-[#8B0000] text-white shadow-sm" : "text-[#1A1A1A]/60 hover:text-[#8B0000]"
+                }`}
+              >
+                EN
+              </button>
+            </div>
           )}
         </div>
 
@@ -387,12 +386,6 @@ function ProverbCard({ item, active, lang }: { item: Proverb; active: boolean; l
           </button>
         )}
 
-        {item.meaning && (
-          <div className="mt-8 p-4 bg-[#D4A63A]/10 border-l-4 border-[#D4A63A] rounded-r-lg">
-            <p className="text-sm font-semibold text-[#1A1A1A]/70 mb-1">{showEnglish ? "Meaning" : "ትርጉም"}</p>
-            <p className="text-base text-[#1A1A1A] font-medium leading-relaxed">{item.meaning}</p>
-          </div>
-        )}
 
         <p className="mt-6 pt-4 border-t border-black/10 text-sm font-serif italic text-[#8B0000]/80 text-right">
           &mdash; {attribution}

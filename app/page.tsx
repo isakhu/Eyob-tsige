@@ -3,6 +3,9 @@ import EducationCard from "./components/EducationCard";
 import Organizations from "./components/Organizations";
 import { proverbs } from "./data/proverbs";
 import Reveal from "./components/Reveal";
+import Biography from "./components/Biography";
+import MediaPrograms from "./components/MediaPrograms";
+import Contact from "./components/Contact";
 
 const education = [
   {
@@ -152,7 +155,11 @@ export default function Home() {
 
 
 
+      <Reveal><Biography /></Reveal>
+
       <Reveal><Organizations /></Reveal>
+
+      <Reveal><MediaPrograms /></Reveal>
 
       {/* Education Section */}
       <Reveal><section id="education" className="bg-[#FDFBF7] text-[#1A1A1A]">
@@ -178,6 +185,8 @@ export default function Home() {
         </div>
       </section></Reveal>
 
+
+      <Reveal><Contact /></Reveal>
 
       {/* Footer */}
       <Reveal><footer className="border-t border-black/5 bg-[#FDFBF7]">

@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { bookstoreImages } from "../data/bookstoreImages";
+import React, { useState } from "react";
+import { bookstoreBooks, BookCategory } from "../data/bookstoreImages";
 
 export default function Organizations() {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [showGallery, setShowGallery] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<BookCategory | "All">("All");
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -300 : 300;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
+  const filteredBooks = selectedCategory === "All" 
+    ? bookstoreBooks 
+    : bookstoreBooks.filter(b => b.category === selectedCategory);
 
   return (
     <section id="organizations" className="bg-[#FDFBF7] py-24 border-t border-black/5">
@@ -37,7 +34,7 @@ export default function Organizations() {
                 onClick={() => setShowGallery(true)}
                 className="text-sm font-bold text-[#D4A63A] hover:text-white uppercase tracking-widest flex items-center justify-center w-full gap-2 transition-colors py-1"
               >
-                View Full Book Gallery ({bookstoreImages.length} Books)
+                View Full Book Gallery ({bookstoreBooks.length} Books)
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
               </button>
             </div>
@@ -91,7 +88,7 @@ export default function Organizations() {
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 flex flex-col sm:flex-row gap-3">
                 <a
                   href="https://www.google.com/maps?cid=6704381335968596191"
                   target="_blank"
@@ -99,6 +96,15 @@ export default function Organizations() {
                   className="inline-flex w-full items-center justify-center gap-2 rounded bg-[#8B0000] px-6 py-3 text-sm font-bold text-[#FDFBF7] shadow hover:bg-[#5C0000] transition-colors uppercase tracking-wide"
                 >
                   📍 Get Directions
+                </a>
+                <a
+                  href="https://t.me/EYOBBOOKSHAWASSA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded bg-[#0088cc] px-6 py-3 text-sm font-bold text-white shadow hover:bg-[#0077b3] transition-colors uppercase tracking-wide"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                  Join Telegram (8,000+ Books)
                 </a>
               </div>
             </div>
@@ -148,37 +154,67 @@ export default function Organizations() {
       {/* Fullscreen Gallery Grid */}
       {showGallery && (
         <div className="fixed inset-0 z-[100] flex flex-col bg-[#FDFBF7] animate-[heroFadeUp_0.3s_ease-out_both]">
-          <div className="flex items-center justify-between p-6 border-b border-black/10 bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between p-6 border-b border-black/10 bg-white/80 backdrop-blur-md sticky top-0 z-10 shadow-sm gap-4">
             <div>
               <h2 className="text-2xl font-['Impact',_sans-serif] uppercase text-[#1A1A1A] tracking-wider">Eyob Tsige Bookstore</h2>
-              <p className="text-sm font-bold text-[#8B0000]">{bookstoreImages.length} Books Available</p>
+              <p className="text-sm font-bold text-[#8B0000]">Previewing {bookstoreBooks.length} books. Join Telegram for our full 8,000+ collection!</p>
             </div>
-            <button 
-              className="text-[#1A1A1A] hover:text-white hover:bg-[#8B0000] transition-colors p-2 bg-black/5 rounded-full"
-              onClick={() => setShowGallery(false)}
-              aria-label="Close gallery"
-            >
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
+            <div className="flex items-center gap-3">
+              <a href="https://t.me/EYOBBOOKSHAWASSA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-[#0088cc] text-white font-bold rounded hover:bg-[#0077b3] transition-colors text-sm">
+                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                 Telegram
+              </a>
+              <button 
+                className="text-[#1A1A1A] hover:text-white hover:bg-[#8B0000] transition-colors p-2 bg-black/5 rounded-full shrink-0"
+                onClick={() => setShowGallery(false)}
+                aria-label="Close gallery"
+              >
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
           </div>
           
-          <div className="flex-1 overflow-y-auto p-6 md:p-10">
+          {/* Category Filter */}
+          <div className="bg-white border-b border-black/5 px-6 py-4 flex gap-2 overflow-x-auto sticky top-[88px] z-10 shadow-sm" style={{ scrollbarWidth: 'none' }}>
+            <button 
+              onClick={() => setSelectedCategory("All")}
+              className={`px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all ${selectedCategory === "All" ? "bg-[#8B0000] text-white shadow-md scale-105" : "bg-black/5 text-[#1A1A1A]/70 hover:bg-black/10"}`}
+            >
+              All Books
+            </button>
+            {["Leadership", "Psychology", "Theology", "Business", "Fiction", "Self-Help"].map(cat => (
+              <button 
+                key={cat}
+                onClick={() => setSelectedCategory(cat as BookCategory)}
+                className={`px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all ${selectedCategory === cat ? "bg-[#8B0000] text-white shadow-md scale-105" : "bg-black/5 text-[#1A1A1A]/70 hover:bg-black/10"}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          
+          <div className="flex-1 overflow-y-auto p-6 md:p-10 bg-[#FDFBF7]">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 max-w-[1600px] mx-auto">
-              {bookstoreImages.map((filename, i) => (
+              {filteredBooks.map((book) => (
                 <div 
-                  key={i} 
-                  className="group relative aspect-[3/4] rounded-lg overflow-hidden border border-black/10 shadow-sm hover:shadow-xl transition-all cursor-pointer bg-white" 
-                  onClick={() => setSelectedImage(filename)}
+                  key={book.id} 
+                  className="group relative flex flex-col aspect-[3/4.5] rounded-lg overflow-hidden border border-black/10 shadow-sm hover:shadow-xl transition-all cursor-pointer bg-white" 
+                  onClick={() => setSelectedImage(book.path)}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src={`/images/books/eyob-books/${filename}`} 
-                    alt={`Eyob Tsige Bookstore Book ${i + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                    loading="lazy" 
-                  />
-                  <div className="absolute inset-0 bg-[#8B0000]/0 group-hover:bg-[#8B0000]/20 transition-colors flex items-center justify-center">
-                    <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                  <div className="relative flex-1 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={book.path} 
+                      alt={`Book in ${book.category}`} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                      loading="lazy" 
+                    />
+                    <div className="absolute inset-0 bg-[#8B0000]/0 group-hover:bg-[#8B0000]/20 transition-colors flex items-center justify-center">
+                      <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                    </div>
+                  </div>
+                  <div className="bg-[#F5F0E6] py-2 px-2 text-center border-t border-black/5 shrink-0">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#8B0000]">{book.category}</span>
                   </div>
                 </div>
               ))}
@@ -204,7 +240,7 @@ export default function Organizations() {
           <div className="relative w-full max-w-5xl h-full max-h-[90vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
-              src={`/images/books/eyob-books/${selectedImage}`} 
+              src={selectedImage} 
               alt="Fullscreen Book Cover" 
               className="max-w-full max-h-[90vh] object-contain rounded-md shadow-2xl" 
             />
