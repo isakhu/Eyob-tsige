@@ -121,7 +121,7 @@ export default function Organizations() {
                   A premier media production company dedicated to creating impactful, high-quality audio and visual content. We focus on elevating educational and inspirational messaging through state-of-the-art media.
                 </p>
                 <div className="mt-8">
-                  <a href="#" className="inline-flex items-center gap-2 px-6 py-3 rounded border border-[#D4A63A]/50 text-[#D4A63A] font-bold uppercase tracking-wide hover:bg-[#D4A63A] hover:text-[#1A1A1A] transition-colors">
+                  <a href="/semay" className="inline-flex items-center gap-2 px-6 py-3 rounded border border-[#D4A63A]/50 text-[#D4A63A] font-bold uppercase tracking-wide hover:bg-[#D4A63A] hover:text-[#1A1A1A] transition-colors">
                     Learn More
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
